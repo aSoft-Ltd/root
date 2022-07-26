@@ -17,6 +17,10 @@ fun WorkflowBuilder.submodule(name: String) = job(id = name, runsOn = MacOSLates
     uses(CheckoutV3(submodules = true))
     uses(SetupJavaV3("18", Corretto))
     run(
+        command = "chmod +x ./gradlew",
+        _customArguments = mapOf("working-directory" to StringCustomValue(name))
+    )
+    run(
         command = "./gradlew build",
         _customArguments = mapOf("working-directory" to StringCustomValue(name))
     )

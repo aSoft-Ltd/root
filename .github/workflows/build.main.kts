@@ -13,12 +13,12 @@ import it.krzeminski.githubactions.dsl.WorkflowBuilder
 import it.krzeminski.githubactions.dsl.workflow
 import it.krzeminski.githubactions.yaml.toYaml
 
-fun WorkflowBuilder.submodule(name: String) = job(id = name, name = name, runsOn = MacOSLatest) {
+fun WorkflowBuilder.submodule(name: String) = job(id = name, runsOn = MacOSLatest) {
     uses(CheckoutV3(submodules = true))
     uses(SetupJavaV3("18", Corretto))
     run(
         command = "./gradlew build",
-        _customArguments = mapOf("working-directory" to StringCustomValue("name"))
+        _customArguments = mapOf("working-directory" to StringCustomValue(name))
     )
 }
 

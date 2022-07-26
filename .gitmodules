@@ -1,0 +1,3 @@
+[submodule "viewmodel"]
+	path = viewmodel
+	url = https://github.com/aSoft-Ltd/viewmodel

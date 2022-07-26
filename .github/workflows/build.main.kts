@@ -3,7 +3,6 @@
 @file:DependsOn("it.krzeminski:github-actions-kotlin-dsl:0.22.0")
 @file:Suppress("Since15")
 
-import it.krzeminski.githubactions.actions.actions.CacheV3
 import it.krzeminski.githubactions.actions.actions.CheckoutV3
 import it.krzeminski.githubactions.actions.actions.SetupJavaV3
 import it.krzeminski.githubactions.actions.actions.SetupJavaV3.Distribution.Corretto
@@ -23,10 +22,6 @@ fun WorkflowBuilder.submodule(name: String) = job(id = name, runsOn = MacOSLates
         _customArguments = mapOf("working-directory" to StringCustomValue(name))
     )
     uses(GradleBuildActionV2(arguments = "build", buildRootDirectory = "./$name"))
-//    run(
-//        command = "./gradlew build",
-//        _customArguments = mapOf("working-directory" to StringCustomValue(name))
-//    )
 }
 
 val workflow = workflow(

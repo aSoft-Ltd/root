@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/live" beforeDir="false" afterPath="$PROJECT_DIR$/live" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/compose/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/compose/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/coroutines/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/coroutines/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/react/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/react/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/compose/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/compose/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/coroutines/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/coroutines/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/react/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/react/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/test/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/test/build.gradle.kts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/viewmodel" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2CTtxwxryH8RhioAqKBdlGu9NOg" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root/.github/workflows&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/.github/workflows" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="build.main.kts" type="KotlinStandaloneScriptRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <module name="root" />
+      <option name="filePath" value="$PROJECT_DIR$/.github/workflows/build.main.kts" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="" />
+      <created>1658838653058</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1658838653058</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

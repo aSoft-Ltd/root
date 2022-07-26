@@ -10,20 +10,9 @@ on:
       - 'dev'
 
 jobs:
-  "check_yaml_consistency":
-    runs-on: "ubuntu-latest"
-    steps:
-      - id: step-0
-        name: Check out
-        uses: actions/checkout@v3
-      - id: step-1
-        name: Consistency check
-        run: diff -u '.github/workflows/build.yaml' <('.github/workflows/build.main.kts')
   "live":
     name: live
     runs-on: "macos-latest"
-    needs:
-      - "check_yaml_consistency"
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -40,8 +29,6 @@ jobs:
   "viewmodel":
     name: viewmodel
     runs-on: "macos-latest"
-    needs:
-      - "check_yaml_consistency"
     steps:
       - id: step-0
         uses: actions/checkout@v3

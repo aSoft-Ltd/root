@@ -31,4 +31,4 @@ val workflow = workflow(
     submodule("viewmodel")
 }
 
-println(workflow.toYaml())
+println(workflow.toYaml(addConsistencyCheck = false))

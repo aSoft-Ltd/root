@@ -1,3 +1,6 @@
 [submodule "viewmodel"]
 	path = viewmodel
 	url = https://github.com/aSoft-Ltd/viewmodel
+[submodule "live"]
+	path = live
+	url = https://github.com/aSoft-Ltd/live

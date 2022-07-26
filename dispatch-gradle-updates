@@ -1,0 +1,17 @@
+#!/bin/sh
+set -xe
+main() {
+  for subdir in */; do
+    if [ "$subdir" != "gradle/" ]; then
+      project=$subdir
+      cp ./gradle "$project" -r
+	  cp ./gradle.properties "$project"
+	  cp ./local.properties "$project"
+   	  cp ./build.gradle.kts "$project"
+ 	  cp ./gradlew "$project"
+	  cp ./gradlew.bat "$project"
+    fi
+  done
+}
+
+main

@@ -7,6 +7,7 @@ import it.krzeminski.githubactions.actions.actions.CacheV3
 import it.krzeminski.githubactions.actions.actions.CheckoutV3
 import it.krzeminski.githubactions.actions.actions.SetupJavaV3
 import it.krzeminski.githubactions.actions.actions.SetupJavaV3.Distribution.Corretto
+import it.krzeminski.githubactions.actions.gradle.GradleBuildActionV2
 import it.krzeminski.githubactions.domain.RunnerType.MacOSLatest
 import it.krzeminski.githubactions.domain.triggers.Push
 import it.krzeminski.githubactions.dsl.StringCustomValue
@@ -21,10 +22,11 @@ fun WorkflowBuilder.submodule(name: String) = job(id = name, runsOn = MacOSLates
         command = "chmod +x ./gradlew",
         _customArguments = mapOf("working-directory" to StringCustomValue(name))
     )
-    run(
-        command = "./gradlew build",
-        _customArguments = mapOf("working-directory" to StringCustomValue(name))
-    )
+    uses(GradleBuildActionV2(arguments = "build", buildRootDirectory = "./$name"))
+//    run(
+//        command = "./gradlew build",
+//        _customArguments = mapOf("working-directory" to StringCustomValue(name))
+//    )
 }
 
 val workflow = workflow(

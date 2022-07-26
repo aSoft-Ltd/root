@@ -1,4 +1,4 @@
-# This file was generated using Kotlin DSL (.github/workflows/publish.main.kts).
+# This file was generated using Kotlin DSL (publish.main.kts).
 # If you want to modify the workflow, please change the Kotlin file and regenerate this YAML file.
 # Generated with https://github.com/krzema12/github-actions-kotlin-dsl
 

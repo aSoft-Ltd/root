@@ -1,0 +1,35 @@
+#!/bin/sh
+set -xe
+
+workflowUpdates() {
+  echo "Rebuilding workflows"
+  ./.github/workflows/publish.main.kts > ./.github/workflows/publish.yml
+}
+
+gradleUpdates() {
+    echo "Updating gradle"
+    for subdir in */; do
+      if [ "$subdir" != "gradle/" ]; then
+        project=$subdir
+        cp ./gradle "$project" -r
+  	  cp ./gradle.properties "$project"
+  	  cp ./local.properties "$project"
+     	  cp ./build.gradle.kts "$project"
+   	  cp ./gradlew "$project"
+  	  cp ./gradlew.bat "$project"
+      fi
+    done
+}
+
+gitCommits() {
+  git submodule foreach git ac "Updated gradle versions" | echo "skipping"
+  git ac "Updated gradle versions"
+}
+
+main() {
+  workflowUpdates
+  gradleUpdates
+  gitCommits
+}
+
+main

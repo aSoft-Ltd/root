@@ -1,0 +1,58 @@
+# This file was generated using Kotlin DSL (.github/workflows/build.main.kts).
+# If you want to modify the workflow, please change the Kotlin file and regenerate this YAML file.
+# Generated with https://github.com/krzema12/github-actions-kotlin-dsl
+
+name: Build Libs
+
+on:
+  push:
+    branches:
+      - 'dev'
+
+jobs:
+  "check_yaml_consistency":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        name: Check out
+        uses: actions/checkout@v3
+      - id: step-1
+        name: Consistency check
+        run: diff -u '.github/workflows/build.yaml' <('.github/workflows/build.main.kts')
+  "live":
+    name: live
+    runs-on: "macos-latest"
+    needs:
+      - "check_yaml_consistency"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        working-directory: name
+        run: ./gradlew build
+  "viewmodel":
+    name: viewmodel
+    runs-on: "macos-latest"
+    needs:
+      - "check_yaml_consistency"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        working-directory: name
+        run: ./gradlew build
+

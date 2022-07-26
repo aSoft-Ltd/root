@@ -47,20 +47,15 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(id = "build-${rp.name}",
             action = GradleBuildActionV2(arguments = ":${rp.name}-$it:build", buildRootDirectory = "./${rp.path}")
         )
     }
-    uses(name = "build", GradleBuildActionV2(arguments = "build", buildRootDirectory = "./${rp.path}"))
 }
 
 fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(id = "publish-${rp.name}", runsOn = MacOSLatest, needs = listOf(after)) {
     setupAndCheckout(rp)
     rp.subs.forEach {
-        val arg = buildString {
-            append(":${rp.name}-$it:publishToSonatype")
-            append(" ")
-            append(":${rp.name}-$it:closeAndReleaseStagingRepository")
-        }
+        val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
         uses(
             name = "publish ${rp.name}-$it",
-            action = GradleBuildActionV2(arguments = arg, buildRootDirectory = "./${rp.path}")
+            action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
         )
     }
 }
@@ -76,7 +71,8 @@ val workflow = workflow(
         "ASOFT_NEXUS_USERNAME" to expr { secrets["ASOFT_NEXUS_USERNAME"].toString() },
     )
 ) {
-    val buildJobs = projects.map { buildProject(it) }
+//    val buildJobs = projects.map { buildProject(it) }
+    val buildJobs = listOf<Job>()
     val rendezvous = job(id = "rendezvous", runsOn = UbuntuLatest, needs = buildJobs) {
         run("""echo "all builds completed. Beginning deployment"""")
     }

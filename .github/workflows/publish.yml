@@ -9,6 +9,12 @@ on:
     branches:
       - 'main'
 
+env:
+  ASOFT_MAVEN_PGP_PRIVATE_KEY: ${{ secrets.ASOFT_MAVEN_PGP_PRIVATE_KEY }}
+  ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
+  ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
+  ASOFT_NEXUS_USERNAME: ${{ secrets.ASOFT_NEXUS_USERNAME }}
+
 jobs:
   "build-live":
     runs-on: "macos-latest"
@@ -60,6 +66,8 @@ jobs:
         run: echo "all builds completed. Beginning deployment"
   "publish-live":
     runs-on: "macos-latest"
+    needs:
+      - "rendezvous"
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -80,6 +88,8 @@ jobs:
           build-root-directory: ./live
   "publish-viewmodel":
     runs-on: "macos-latest"
+    needs:
+      - "rendezvous"
     steps:
       - id: step-0
         uses: actions/checkout@v3

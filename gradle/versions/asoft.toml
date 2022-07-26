@@ -1,6 +1,5 @@
 [versions]
 root = "2.0.0-rc1"
-stdlib = "0.2.43"
 foundation = "1.5.2"
 
 [libraries]

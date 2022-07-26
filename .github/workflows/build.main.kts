@@ -3,6 +3,7 @@
 @file:DependsOn("it.krzeminski:github-actions-kotlin-dsl:0.22.0")
 @file:Suppress("Since15")
 
+import it.krzeminski.githubactions.actions.actions.CacheV3
 import it.krzeminski.githubactions.actions.actions.CheckoutV3
 import it.krzeminski.githubactions.actions.actions.SetupJavaV3
 import it.krzeminski.githubactions.actions.actions.SetupJavaV3.Distribution.Corretto

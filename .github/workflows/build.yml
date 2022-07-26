@@ -24,6 +24,9 @@ jobs:
           distribution: corretto
       - id: step-2
         working-directory: live
+        run: chmod +x ./gradlew
+      - id: step-3
+        working-directory: live
         run: ./gradlew build
   "viewmodel":
     runs-on: "macos-latest"
@@ -38,6 +41,9 @@ jobs:
           java-version: 18
           distribution: corretto
       - id: step-2
+        working-directory: viewmodel
+        run: chmod +x ./gradlew
+      - id: step-3
         working-directory: viewmodel
         run: ./gradlew build
 

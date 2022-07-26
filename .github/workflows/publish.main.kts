@@ -11,32 +11,59 @@ import it.krzeminski.githubactions.domain.Job
 import it.krzeminski.githubactions.domain.RunnerType.MacOSLatest
 import it.krzeminski.githubactions.domain.RunnerType.UbuntuLatest
 import it.krzeminski.githubactions.domain.triggers.Push
+import it.krzeminski.githubactions.dsl.JobBuilder
 import it.krzeminski.githubactions.dsl.StringCustomValue
 import it.krzeminski.githubactions.dsl.WorkflowBuilder
 import it.krzeminski.githubactions.dsl.expressions.expr
 import it.krzeminski.githubactions.dsl.workflow
 import it.krzeminski.githubactions.yaml.toYaml
 
-fun WorkflowBuilder.submoduleJob(
-    prefix: String,
-    project: String,
-    task: String,
-    needs: List<Job> = listOf()
-) = job(id = "$prefix-$project", runsOn = MacOSLatest, needs = needs) {
+data class RootProject(
+    val name: String,
+    val path: String,
+    val subs: List<String>
+)
+
+val projects = listOf(
+    RootProject("live", "live", listOf("core", "coroutines", "react")),
+    RootProject("viewmodel", "viewmodel", listOf("core", "coroutines", "react", "test"))
+)
+
+fun JobBuilder.setupAndCheckout(rp: RootProject) {
     uses(CheckoutV3(submodules = true))
     uses(SetupJavaV3("18", Corretto))
     run(
+        name = "Make ./gradlew executable",
         command = "chmod +x ./gradlew",
-        _customArguments = mapOf("working-directory" to StringCustomValue(project))
+        _customArguments = mapOf("working-directory" to StringCustomValue(rp.path))
     )
-    uses(GradleBuildActionV2(arguments = task, buildRootDirectory = "./$project"))
 }
 
-fun WorkflowBuilder.buildJob(project: String) = submoduleJob("build", project, "build")
+fun WorkflowBuilder.buildProject(rp: RootProject) = job(id = "build-${rp.name}", runsOn = MacOSLatest) {
+    setupAndCheckout(rp)
+    rp.subs.forEach {
+        uses(
+            name = "build ${rp.name}-$it",
+            action = GradleBuildActionV2(arguments = ":${rp.name}-$it:build", buildRootDirectory = "./${rp.path}")
+        )
+    }
+    uses(name = "build", GradleBuildActionV2(arguments = "build", buildRootDirectory = "./${rp.path}"))
+}
 
-fun WorkflowBuilder.publishJob(project: String, needs: Job) = submoduleJob(
-    "publish", project, "publishToSonatype closeAndReleaseStagingRepository", needs = listOf(needs)
-)
+fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(id = "publish-${rp.name}", runsOn = MacOSLatest, needs = listOf(after)) {
+    setupAndCheckout(rp)
+    rp.subs.forEach {
+        val arg = buildString {
+            append(":${rp.name}-$it:publishToSonatype")
+            append(" ")
+            append(":${rp.name}-$it:closeAndReleaseStagingRepository")
+        }
+        uses(
+            name = "publish ${rp.name}-$it",
+            action = GradleBuildActionV2(arguments = arg, buildRootDirectory = "./${rp.path}")
+        )
+    }
+}
 
 val workflow = workflow(
     name = "Build And Publish",
@@ -49,12 +76,11 @@ val workflow = workflow(
         "ASOFT_NEXUS_USERNAME" to expr { secrets["ASOFT_NEXUS_USERNAME"].toString() },
     )
 ) {
-    val projects = listOf("live", "viewmodel")
-    val buildJobs = projects.map { project -> buildJob(project) }
+    val buildJobs = projects.map { buildProject(it) }
     val rendezvous = job(id = "rendezvous", runsOn = UbuntuLatest, needs = buildJobs) {
         run("""echo "all builds completed. Beginning deployment"""")
     }
-    projects.map { project -> publishJob(project, rendezvous) }
+    projects.forEach { publishProject(it, rendezvous) }
 }
 
 println(workflow.toYaml(addConsistencyCheck = false))

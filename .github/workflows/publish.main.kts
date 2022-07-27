@@ -45,10 +45,13 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(
 ) {
     setupAndCheckout(rp)
     rp.subs.forEach {
-        uses(
-            name = "building ${rp.name}-$it",
-            action = GradleBuildActionV2(arguments = ":${rp.name}-$it:build", buildRootDirectory = "./${rp.path}")
-        )
+        listOf(false, true).forEach { includeBuild ->
+            uses(
+                name = "building ${rp.name}-$it [INCLUDE_BUILD=$includeBuild]",
+                env = linkedMapOf("INCLUDE_BUILD" to includeBuild.toString()),
+                action = GradleBuildActionV2(arguments = ":${rp.name}-$it:build", buildRootDirectory = "./${rp.path}")
+            )
+        }
     }
 }
 
@@ -59,10 +62,13 @@ fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
     setupAndCheckout(rp)
     rp.subs.forEach {
         val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
-        uses(
-            name = "publishing ${rp.name}-$it",
-            action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
-        )
+        listOf(false, true).forEach { includeBuild ->
+            uses(
+                name = "publishing ${rp.name}-$it [INCLUDE_BUILD=$includeBuild]",
+                env = linkedMapOf("INCLUDE_BUILD" to includeBuild.toString()),
+                action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
+            )
+        }
     }
 }
 

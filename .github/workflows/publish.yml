@@ -17,8 +17,91 @@ env:
   INCLUDE_BUILD: true
 
 jobs:
+  "build-live":
+    runs-on: "macos-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: zulu
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: live
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: build live-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :live-core:build
+          build-root-directory: ./live
+      - id: step-4
+        name: build live-coroutines
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :live-coroutines:build
+          build-root-directory: ./live
+      - id: step-5
+        name: build live-react
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :live-react:build
+          build-root-directory: ./live
+      - id: step-6
+        name: build live-test
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :live-test:build
+          build-root-directory: ./live
+  "build-viewmodel":
+    runs-on: "macos-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: zulu
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: viewmodel
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: build viewmodel-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :viewmodel-core:build
+          build-root-directory: ./viewmodel
+      - id: step-4
+        name: build viewmodel-coroutines
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :viewmodel-coroutines:build
+          build-root-directory: ./viewmodel
+      - id: step-5
+        name: build viewmodel-react
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :viewmodel-react:build
+          build-root-directory: ./viewmodel
+      - id: step-6
+        name: build viewmodel-test
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :viewmodel-test:build
+          build-root-directory: ./viewmodel
   "rendezvous":
     runs-on: "ubuntu-latest"
+    needs:
+      - "build-live"
+      - "build-viewmodel"
     steps:
       - id: step-0
         run: echo "all builds completed. Beginning deployment"
@@ -26,6 +109,8 @@ jobs:
     runs-on: "macos-latest"
     needs:
       - "rendezvous"
+    env:
+      INCLUDE_BUILD: true
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -35,36 +120,41 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 18
-          distribution: corretto
+          distribution: zulu
       - id: step-2
-        name: Cache gradle
-        uses: gradle/gradle-build-action@v2
-        with:
-          build-root-directory: ./live
-      - id: step-3
         name: Make ./gradlew executable
         working-directory: live
         run: chmod +x ./gradlew
-      - id: step-4
+      - id: step-3
         name: publish live-core
-        working-directory: ./live
-        run: ./gradlew :live-core:publishToSonatype
-      - id: step-5
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :live-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./live
+      - id: step-4
         name: publish live-coroutines
-        working-directory: ./live
-        run: ./gradlew :live-coroutines:publishToSonatype
-      - id: step-6
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :live-coroutines:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./live
+      - id: step-5
         name: publish live-react
-        working-directory: ./live
-        run: ./gradlew :live-react:publishToSonatype
-      - id: step-7
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :live-react:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./live
+      - id: step-6
         name: publish live-test
-        working-directory: ./live
-        run: ./gradlew :live-test:publishToSonatype
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :live-test:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./live
   "publish-viewmodel":
     runs-on: "macos-latest"
     needs:
       - "rendezvous"
+    env:
+      INCLUDE_BUILD: true
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -74,30 +164,33 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 18
-          distribution: corretto
+          distribution: zulu
       - id: step-2
-        name: Cache gradle
-        uses: gradle/gradle-build-action@v2
-        with:
-          build-root-directory: ./viewmodel
-      - id: step-3
         name: Make ./gradlew executable
         working-directory: viewmodel
         run: chmod +x ./gradlew
-      - id: step-4
+      - id: step-3
         name: publish viewmodel-core
-        working-directory: ./viewmodel
-        run: ./gradlew :viewmodel-core:publishToSonatype
-      - id: step-5
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :viewmodel-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./viewmodel
+      - id: step-4
         name: publish viewmodel-coroutines
-        working-directory: ./viewmodel
-        run: ./gradlew :viewmodel-coroutines:publishToSonatype
-      - id: step-6
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :viewmodel-coroutines:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./viewmodel
+      - id: step-5
         name: publish viewmodel-react
-        working-directory: ./viewmodel
-        run: ./gradlew :viewmodel-react:publishToSonatype
-      - id: step-7
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :viewmodel-react:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./viewmodel
+      - id: step-6
         name: publish viewmodel-test
-        working-directory: ./viewmodel
-        run: ./gradlew :viewmodel-test:publishToSonatype
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :viewmodel-test:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./viewmodel
 

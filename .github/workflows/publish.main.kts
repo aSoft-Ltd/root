@@ -6,6 +6,7 @@
 import it.krzeminski.githubactions.actions.actions.CheckoutV3
 import it.krzeminski.githubactions.actions.actions.SetupJavaV3
 import it.krzeminski.githubactions.actions.actions.SetupJavaV3.Distribution.Corretto
+import it.krzeminski.githubactions.actions.actions.SetupJavaV3.Distribution.Zulu
 import it.krzeminski.githubactions.actions.gradle.GradleBuildActionV2
 import it.krzeminski.githubactions.domain.Job
 import it.krzeminski.githubactions.domain.RunnerType.MacOSLatest
@@ -31,8 +32,7 @@ val projects = listOf(
 
 fun JobBuilder.setupAndCheckout(rp: RootProject) {
     uses(CheckoutV3(submodules = true))
-    uses(SetupJavaV3("18", Corretto))
-    uses(name = "Cache gradle", action = GradleBuildActionV2(buildRootDirectory = "./${rp.path}"))
+    uses(SetupJavaV3("18", Zulu))
     run(
         name = "Make ./gradlew executable",
         command = "chmod +x ./gradlew",
@@ -40,37 +40,26 @@ fun JobBuilder.setupAndCheckout(rp: RootProject) {
     )
 }
 
-fun WorkflowBuilder.buildProject(rp: RootProject) = job(
-    id = "build-${rp.name}", runsOn = MacOSLatest
-) {
+fun WorkflowBuilder.buildProject(rp: RootProject) = job(id = "build-${rp.name}", runsOn = MacOSLatest) {
     setupAndCheckout(rp)
     rp.subs.forEach {
-        run(
+        uses(
             name = "build ${rp.name}-$it",
-            command = "./gradlew :${rp.name}-$it:build",
-            _customArguments = mapOf(
-                "working-directory" to StringCustomValue("./${rp.path}")
-            )
+            action = GradleBuildActionV2(arguments = ":${rp.name}-$it:build", buildRootDirectory = "./${rp.path}")
         )
     }
 }
 
 fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
-    id = "publish-${rp.name}", runsOn = MacOSLatest, needs = listOf(after)
+    id = "publish-${rp.name}", runsOn = MacOSLatest, needs = listOf(after),
+    env = linkedMapOf("INCLUDE_BUILD" to "true")
 ) {
     setupAndCheckout(rp)
     rp.subs.forEach {
-//        val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
-//        uses(
-//            name = "publish ${rp.name}-$it",
-//            action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
-//        )
-        run(
+        val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
+        uses(
             name = "publish ${rp.name}-$it",
-            command = "./gradlew :${rp.name}-$it:publishToSonatype",
-            _customArguments = mapOf(
-                "working-directory" to StringCustomValue("./${rp.path}")
-            )
+            action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
         )
     }
 }
@@ -87,8 +76,7 @@ val workflow = workflow(
         "INCLUDE_BUILD" to "true"
     )
 ) {
-//    val buildJobs = projects.map { buildProject(it) }
-    val buildJobs = listOf<Job>()
+    val buildJobs = projects.map { buildProject(it) }
     val rendezvous = job(id = "rendezvous", runsOn = UbuntuLatest, needs = buildJobs) {
         run("""echo "all builds completed. Beginning deployment"""")
     }

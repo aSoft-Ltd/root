@@ -18,8 +18,6 @@ env:
 jobs:
   "live-builder":
     runs-on: "macos-latest"
-    env:
-      INCLUDE_BUILD: false
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -51,14 +49,6 @@ jobs:
         env:
           INCLUDE_BUILD: true
       - id: step-5
-        name: building live-coroutines [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-coroutines:build
-          build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: false
-      - id: step-6
         name: building live-coroutines [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
@@ -66,15 +56,7 @@ jobs:
           build-root-directory: ./live
         env:
           INCLUDE_BUILD: true
-      - id: step-7
-        name: building live-react [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-react:build
-          build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: false
-      - id: step-8
+      - id: step-6
         name: building live-react [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
@@ -82,15 +64,7 @@ jobs:
           build-root-directory: ./live
         env:
           INCLUDE_BUILD: true
-      - id: step-9
-        name: building live-test [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-test:build
-          build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: false
-      - id: step-10
+      - id: step-7
         name: building live-test [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
@@ -100,8 +74,6 @@ jobs:
           INCLUDE_BUILD: true
   "viewmodel-builder":
     runs-on: "macos-latest"
-    env:
-      INCLUDE_BUILD: false
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -133,14 +105,6 @@ jobs:
         env:
           INCLUDE_BUILD: true
       - id: step-5
-        name: building viewmodel-coroutines [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-coroutines:build
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: false
-      - id: step-6
         name: building viewmodel-coroutines [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
@@ -148,15 +112,7 @@ jobs:
           build-root-directory: ./viewmodel
         env:
           INCLUDE_BUILD: true
-      - id: step-7
-        name: building viewmodel-react [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-react:build
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: false
-      - id: step-8
+      - id: step-6
         name: building viewmodel-react [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
@@ -164,15 +120,7 @@ jobs:
           build-root-directory: ./viewmodel
         env:
           INCLUDE_BUILD: true
-      - id: step-9
-        name: building viewmodel-test [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-test:build
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: false
-      - id: step-10
+      - id: step-7
         name: building viewmodel-test [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
@@ -210,7 +158,7 @@ jobs:
         name: building live-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :live-core:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :live-core:build
           build-root-directory: ./live
         env:
           INCLUDE_BUILD: false
@@ -223,14 +171,6 @@ jobs:
         env:
           INCLUDE_BUILD: true
       - id: step-5
-        name: building live-coroutines [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-coroutines:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: false
-      - id: step-6
         name: publishing live-coroutines [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
@@ -238,15 +178,7 @@ jobs:
           build-root-directory: ./live
         env:
           INCLUDE_BUILD: true
-      - id: step-7
-        name: building live-react [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-react:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: false
-      - id: step-8
+      - id: step-6
         name: publishing live-react [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
@@ -254,15 +186,7 @@ jobs:
           build-root-directory: ./live
         env:
           INCLUDE_BUILD: true
-      - id: step-9
-        name: building live-test [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-test:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: false
-      - id: step-10
+      - id: step-7
         name: publishing live-test [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
@@ -292,7 +216,7 @@ jobs:
         name: building viewmodel-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :viewmodel-core:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :viewmodel-core:build
           build-root-directory: ./viewmodel
         env:
           INCLUDE_BUILD: false
@@ -305,14 +229,6 @@ jobs:
         env:
           INCLUDE_BUILD: true
       - id: step-5
-        name: building viewmodel-coroutines [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-coroutines:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: false
-      - id: step-6
         name: publishing viewmodel-coroutines [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
@@ -320,15 +236,7 @@ jobs:
           build-root-directory: ./viewmodel
         env:
           INCLUDE_BUILD: true
-      - id: step-7
-        name: building viewmodel-react [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-react:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: false
-      - id: step-8
+      - id: step-6
         name: publishing viewmodel-react [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
@@ -336,15 +244,7 @@ jobs:
           build-root-directory: ./viewmodel
         env:
           INCLUDE_BUILD: true
-      - id: step-9
-        name: building viewmodel-test [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-test:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: false
-      - id: step-10
+      - id: step-7
         name: publishing viewmodel-test [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:

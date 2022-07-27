@@ -40,25 +40,25 @@ fun JobBuilder.setupAndCheckout(rp: RootProject) {
     )
 }
 
-fun WorkflowBuilder.buildProject(rp: RootProject) = job(id = "build-${rp.name}", runsOn = MacOSLatest) {
+fun WorkflowBuilder.buildProject(rp: RootProject) = job(id = "${rp.name}-builder", runsOn = MacOSLatest) {
     setupAndCheckout(rp)
     rp.subs.forEach {
         uses(
-            name = "build ${rp.name}-$it",
+            name = "building ${rp.name}-$it",
             action = GradleBuildActionV2(arguments = ":${rp.name}-$it:build", buildRootDirectory = "./${rp.path}")
         )
     }
 }
 
 fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
-    id = "publish-${rp.name}", runsOn = MacOSLatest, needs = listOf(after),
+    id = "${rp.name}-publisher", runsOn = MacOSLatest, needs = listOf(after),
     env = linkedMapOf("INCLUDE_BUILD" to "true")
 ) {
     setupAndCheckout(rp)
     rp.subs.forEach {
         val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
         uses(
-            name = "publish ${rp.name}-$it",
+            name = "publishing ${rp.name}-$it",
             action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
         )
     }
@@ -76,7 +76,8 @@ val workflow = workflow(
         "INCLUDE_BUILD" to "true"
     )
 ) {
-    val buildJobs = projects.map { buildProject(it) }
+//    val buildJobs = projects.map { buildProject(it) }
+    val buildJobs = listOf<Job>()
     val rendezvous = job(id = "rendezvous", runsOn = UbuntuLatest, needs = buildJobs) {
         run("""echo "all builds completed. Beginning deployment"""")
     }

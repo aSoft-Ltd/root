@@ -25,7 +25,7 @@ allprojects {
     }
 
     if (System.getenv("INCLUDE_BUILD") == "true") tasks.configureEach {
-        if (name == "compileCommonMainKotlinMetadata") {
+        if (name.endsWith("MainKotlinMetadata")) {
             enabled = false
         }
     }

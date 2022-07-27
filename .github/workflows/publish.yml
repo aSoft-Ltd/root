@@ -46,25 +46,25 @@ jobs:
         name: publishing live-core
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :live-core:publishToSonatype -x :live-core:compileCommonMainKotlinMetadata closeAndReleaseStagingRepository
+          arguments: :live-core:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./live
       - id: step-4
         name: publishing live-coroutines
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :live-coroutines:publishToSonatype -x :live-coroutines:compileCommonMainKotlinMetadata closeAndReleaseStagingRepository
+          arguments: :live-coroutines:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./live
       - id: step-5
         name: publishing live-react
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :live-react:publishToSonatype -x :live-react:compileCommonMainKotlinMetadata closeAndReleaseStagingRepository
+          arguments: :live-react:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./live
       - id: step-6
         name: publishing live-test
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :live-test:publishToSonatype -x :live-test:compileCommonMainKotlinMetadata closeAndReleaseStagingRepository
+          arguments: :live-test:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./live
   "viewmodel-publisher":
     runs-on: "macos-latest"
@@ -90,24 +90,24 @@ jobs:
         name: publishing viewmodel-core
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :viewmodel-core:publishToSonatype -x :viewmodel-core:compileCommonMainKotlinMetadata closeAndReleaseStagingRepository
+          arguments: :viewmodel-core:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./viewmodel
       - id: step-4
         name: publishing viewmodel-coroutines
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :viewmodel-coroutines:publishToSonatype -x :viewmodel-coroutines:compileCommonMainKotlinMetadata closeAndReleaseStagingRepository
+          arguments: :viewmodel-coroutines:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./viewmodel
       - id: step-5
         name: publishing viewmodel-react
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :viewmodel-react:publishToSonatype -x :viewmodel-react:compileCommonMainKotlinMetadata closeAndReleaseStagingRepository
+          arguments: :viewmodel-react:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./viewmodel
       - id: step-6
         name: publishing viewmodel-test
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :viewmodel-test:publishToSonatype -x :viewmodel-test:compileCommonMainKotlinMetadata closeAndReleaseStagingRepository
+          arguments: :viewmodel-test:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./viewmodel
 

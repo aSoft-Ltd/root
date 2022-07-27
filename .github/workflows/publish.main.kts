@@ -56,7 +56,7 @@ fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
 ) {
     setupAndCheckout(rp)
     rp.subs.forEach {
-        val argument = ":${rp.name}-$it:publishToSonatype -x :${rp.name}-$it:compileCommonMainKotlinMetadata closeAndReleaseStagingRepository"
+        val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
         uses(
             name = "publishing ${rp.name}-$it",
             action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")

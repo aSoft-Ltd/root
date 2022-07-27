@@ -87,7 +87,8 @@ val workflow = workflow(
         "INCLUDE_BUILD" to "true"
     )
 ) {
-    val buildJobs = projects.map { buildProject(it) }
+//    val buildJobs = projects.map { buildProject(it) }
+    val buildJobs = listOf<Job>()
     val rendezvous = job(id = "rendezvous", runsOn = UbuntuLatest, needs = buildJobs) {
         run("""echo "all builds completed. Beginning deployment"""")
     }

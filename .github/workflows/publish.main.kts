@@ -69,6 +69,7 @@ val workflow = workflow(
         "ASOFT_MAVEN_PGP_PASSWORD" to expr { secrets["ASOFT_MAVEN_PGP_PASSWORD"].toString() },
         "ASOFT_NEXUS_PASSWORD" to expr { secrets["ASOFT_NEXUS_PASSWORD"].toString() },
         "ASOFT_NEXUS_USERNAME" to expr { secrets["ASOFT_NEXUS_USERNAME"].toString() },
+        "INCLUDE_BUILD" to "true"
     )
 ) {
     val buildJobs = projects.map { buildProject(it) }

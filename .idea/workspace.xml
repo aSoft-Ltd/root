@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.main.kts" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.main.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live" beforeDir="false" afterPath="$PROJECT_DIR$/live" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live/compose/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/compose/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/core/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live/coroutines/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/coroutines/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live/react/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/react/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/live/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewmodel" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewmodel/compose/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/compose/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewmodel/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/core/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewmodel/coroutines/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/coroutines/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewmodel/react/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/react/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewmodel/test/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/test/build.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,16 +39,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root/viewmodel/build.gradle.kts",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root/viewmodel/build.gradle.kts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/live" />

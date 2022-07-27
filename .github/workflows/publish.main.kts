@@ -32,6 +32,7 @@ val projects = listOf(
 fun JobBuilder.setupAndCheckout(rp: RootProject) {
     uses(CheckoutV3(submodules = true))
     uses(SetupJavaV3("18", Corretto))
+    uses(name = "Cache gradle", action = GradleBuildActionV2(buildRootDirectory = "./${rp.path}"))
     run(
         name = "Make ./gradlew executable",
         command = "chmod +x ./gradlew",
@@ -39,39 +40,51 @@ fun JobBuilder.setupAndCheckout(rp: RootProject) {
     )
 }
 
-fun WorkflowBuilder.buildProject(rp: RootProject) = job(id = "build-${rp.name}", runsOn = MacOSLatest) {
+fun WorkflowBuilder.buildProject(rp: RootProject) = job(
+    id = "build-${rp.name}", runsOn = MacOSLatest
+) {
     setupAndCheckout(rp)
     rp.subs.forEach {
-        uses(
+        run(
             name = "build ${rp.name}-$it",
-            action = GradleBuildActionV2(arguments = ":${rp.name}-$it:build", buildRootDirectory = "./${rp.path}")
+            command = ":${rp.name}-$it:build",
+            _customArguments = mapOf(
+                "working-directory" to StringCustomValue("./${rp.path}")
+            )
         )
     }
 }
 
 fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
-    id = "publish-${rp.name}", runsOn = MacOSLatest, needs = listOf(after),
-    env = linkedMapOf("INCLUDE_BUILD" to "true")
+    id = "publish-${rp.name}", runsOn = MacOSLatest, needs = listOf(after)
 ) {
     setupAndCheckout(rp)
     rp.subs.forEach {
-        val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
-        uses(
+//        val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
+//        uses(
+//            name = "publish ${rp.name}-$it",
+//            action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
+//        )
+        run(
             name = "publish ${rp.name}-$it",
-            action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
+            command = ":${rp.name}-$it:publishToSonatype",
+            _customArguments = mapOf(
+                "working-directory" to StringCustomValue("./${rp.path}")
+            )
         )
     }
 }
 
 val workflow = workflow(
-    name = "Build And Publish",
+    name = "Build, Cache then Publish",
     on = listOf(Push(branches = listOf("main"))),
     sourceFile = __FILE__.toPath(),
     env = linkedMapOf(
         "ASOFT_MAVEN_PGP_PRIVATE_KEY" to expr { secrets["ASOFT_MAVEN_PGP_PRIVATE_KEY"].toString() },
         "ASOFT_MAVEN_PGP_PASSWORD" to expr { secrets["ASOFT_MAVEN_PGP_PASSWORD"].toString() },
         "ASOFT_NEXUS_PASSWORD" to expr { secrets["ASOFT_NEXUS_PASSWORD"].toString() },
-        "ASOFT_NEXUS_USERNAME" to expr { secrets["ASOFT_NEXUS_USERNAME"].toString() }
+        "ASOFT_NEXUS_USERNAME" to expr { secrets["ASOFT_NEXUS_USERNAME"].toString() },
+        "INCLUDE_BUILD" to "true"
     )
 ) {
     val buildJobs = projects.map { buildProject(it) }

@@ -24,8 +24,10 @@ allprojects {
         version = asoft.versions.root.get()
     }
 
-    if (System.getenv("INCLUDE_BUILD") == "true") afterEvaluate {
-        tasks.findByName("compileCommonMainKotlinMetadata")?.enabled = false
+    if (System.getenv("INCLUDE_BUILD") == "true") tasks.configureEach {
+        if (name == "compileCommonMainKotlinMetadata") {
+            enabled = false
+        }
     }
 }
 

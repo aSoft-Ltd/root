@@ -48,19 +48,19 @@ jobs:
       - id: step-4
         name: publish live-core
         working-directory: ./live
-        run: :live-core:publishToSonatype
+        run: ./gradlew :live-core:publishToSonatype
       - id: step-5
         name: publish live-coroutines
         working-directory: ./live
-        run: :live-coroutines:publishToSonatype
+        run: ./gradlew :live-coroutines:publishToSonatype
       - id: step-6
         name: publish live-react
         working-directory: ./live
-        run: :live-react:publishToSonatype
+        run: ./gradlew :live-react:publishToSonatype
       - id: step-7
         name: publish live-test
         working-directory: ./live
-        run: :live-test:publishToSonatype
+        run: ./gradlew :live-test:publishToSonatype
   "publish-viewmodel":
     runs-on: "macos-latest"
     needs:
@@ -87,17 +87,17 @@ jobs:
       - id: step-4
         name: publish viewmodel-core
         working-directory: ./viewmodel
-        run: :viewmodel-core:publishToSonatype
+        run: ./gradlew :viewmodel-core:publishToSonatype
       - id: step-5
         name: publish viewmodel-coroutines
         working-directory: ./viewmodel
-        run: :viewmodel-coroutines:publishToSonatype
+        run: ./gradlew :viewmodel-coroutines:publishToSonatype
       - id: step-6
         name: publish viewmodel-react
         working-directory: ./viewmodel
-        run: :viewmodel-react:publishToSonatype
+        run: ./gradlew :viewmodel-react:publishToSonatype
       - id: step-7
         name: publish viewmodel-test
         working-directory: ./viewmodel
-        run: :viewmodel-test:publishToSonatype
+        run: ./gradlew :viewmodel-test:publishToSonatype
 

@@ -47,7 +47,7 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(
     rp.subs.forEach {
         run(
             name = "build ${rp.name}-$it",
-            command = ":${rp.name}-$it:build",
+            command = "./gradlew :${rp.name}-$it:build",
             _customArguments = mapOf(
                 "working-directory" to StringCustomValue("./${rp.path}")
             )
@@ -67,7 +67,7 @@ fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
 //        )
         run(
             name = "publish ${rp.name}-$it",
-            command = ":${rp.name}-$it:publishToSonatype",
+            command = "./gradlew :${rp.name}-$it:publishToSonatype",
             _customArguments = mapOf(
                 "working-directory" to StringCustomValue("./${rp.path}")
             )

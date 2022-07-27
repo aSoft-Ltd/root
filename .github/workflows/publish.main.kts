@@ -49,7 +49,10 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(id = "build-${rp.name}",
     }
 }
 
-fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(id = "publish-${rp.name}", runsOn = MacOSLatest, needs = listOf(after)) {
+fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
+    id = "publish-${rp.name}", runsOn = MacOSLatest, needs = listOf(after),
+    env = linkedMapOf("INCLUDE_BUILD" to "true")
+) {
     setupAndCheckout(rp)
     rp.subs.forEach {
         val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
@@ -68,8 +71,7 @@ val workflow = workflow(
         "ASOFT_MAVEN_PGP_PRIVATE_KEY" to expr { secrets["ASOFT_MAVEN_PGP_PRIVATE_KEY"].toString() },
         "ASOFT_MAVEN_PGP_PASSWORD" to expr { secrets["ASOFT_MAVEN_PGP_PASSWORD"].toString() },
         "ASOFT_NEXUS_PASSWORD" to expr { secrets["ASOFT_NEXUS_PASSWORD"].toString() },
-        "ASOFT_NEXUS_USERNAME" to expr { secrets["ASOFT_NEXUS_USERNAME"].toString() },
-        "INCLUDE_BUILD" to "true"
+        "ASOFT_NEXUS_USERNAME" to expr { secrets["ASOFT_NEXUS_USERNAME"].toString() }
     )
 ) {
     val buildJobs = projects.map { buildProject(it) }

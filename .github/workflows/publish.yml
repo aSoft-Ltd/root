@@ -14,7 +14,6 @@ env:
   ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
   ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
   ASOFT_NEXUS_USERNAME: ${{ secrets.ASOFT_NEXUS_USERNAME }}
-  INCLUDE_BUILD: true
 
 jobs:
   "build-live":
@@ -109,6 +108,8 @@ jobs:
     runs-on: "macos-latest"
     needs:
       - "rendezvous"
+    env:
+      INCLUDE_BUILD: true
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -151,6 +152,8 @@ jobs:
     runs-on: "macos-latest"
     needs:
       - "rendezvous"
+    env:
+      INCLUDE_BUILD: true
     steps:
       - id: step-0
         uses: actions/checkout@v3

@@ -16,6 +16,12 @@ kotlinx-browser = { module = "tz.co.asoft:kotlinx-browser", version.ref = "found
 kotlinx-collections-atomic = { module = "tz.co.asoft:kotlinx-collections-atomic", version.ref = "foundation" }
 kotlinx-collections-interoperable = { module = "tz.co.asoft:kotlinx-collections-interoperable", version.ref = "foundation" }
 
+live-core = { module = "tz.co.asoft:live-core", version.ref = "root" }
+live-compose = { module = "tz.co.asoft:live-compose", version.ref = "root" }
+live-coroutines = { module = "tz.co.asoft:live-coroutines", version.ref = "root" }
+live-react = { module = "tz.co.asoft:live-react", version.ref = "root" }
+live-test = { module = "tz.co.asoft:live-test", version.ref = "root" }
+
 logging-console = { module = "tz.co.asoft:logging-console", version.ref = "foundation" }
 logging-test-android = { module = "tz.co.asoft:logging-test-android", version.ref = "foundation" }
 

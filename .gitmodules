@@ -1,6 +1,8 @@
 [submodule "viewmodel"]
 	path = viewmodel
 	url = https://github.com/aSoft-Ltd/viewmodel
+	branch = main
 [submodule "live"]
 	path = live
 	url = https://github.com/aSoft-Ltd/live
+    branch = main

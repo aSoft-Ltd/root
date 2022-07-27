@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live" beforeDir="false" afterPath="$PROJECT_DIR$/live" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/live/gradle.properties" afterDir="false" />

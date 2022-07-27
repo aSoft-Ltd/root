@@ -23,12 +23,12 @@ allprojects {
         group = "tz.co.asoft"
         version = asoft.versions.root.get()
     }
-//
-//    if (System.getenv("INCLUDE_BUILD") == "true") tasks.configureEach {
-//        if (name.endsWith("MainKotlinMetadata")) {
-//            enabled = false
-//        }
-//    }
+
+    if (System.getenv("INCLUDE_BUILD") == "true") tasks.configureEach {
+        if (name.endsWith("MainKotlinMetadata")) {
+            enabled = false
+        }
+    }
 }
 
 val releases = file("Release.next.md").readText()

@@ -1,6 +1,6 @@
 #!/usr/bin/env kotlin
 
-@file:DependsOn("it.krzeminski:github-actions-kotlin-dsl:0.22.0")
+@file:DependsOn("it.krzeminski:github-actions-kotlin-dsl:0.23.0")
 @file:Suppress("Since15")
 
 import it.krzeminski.githubactions.actions.actions.CheckoutV3
@@ -13,7 +13,6 @@ import it.krzeminski.githubactions.domain.RunnerType.MacOSLatest
 import it.krzeminski.githubactions.domain.RunnerType.UbuntuLatest
 import it.krzeminski.githubactions.domain.triggers.Push
 import it.krzeminski.githubactions.dsl.JobBuilder
-import it.krzeminski.githubactions.dsl.StringCustomValue
 import it.krzeminski.githubactions.dsl.WorkflowBuilder
 import it.krzeminski.githubactions.dsl.expressions.expr
 import it.krzeminski.githubactions.dsl.workflow
@@ -32,15 +31,18 @@ val projects = listOf(
 
 fun JobBuilder.setupAndCheckout(rp: RootProject) {
     uses(CheckoutV3(submodules = true))
-    uses(SetupJavaV3("18", Zulu))
+    uses(SetupJavaV3("18", Corretto))
     run(
         name = "Make ./gradlew executable",
         command = "chmod +x ./gradlew",
-        _customArguments = mapOf("working-directory" to StringCustomValue(rp.path))
+        workingDirectory = rp.path,
     )
 }
 
-fun WorkflowBuilder.buildProject(rp: RootProject) = job(id = "${rp.name}-builder", runsOn = MacOSLatest) {
+fun WorkflowBuilder.buildProject(rp: RootProject) = job(
+    id = "${rp.name}-builder", runsOn = MacOSLatest,
+    env = linkedMapOf("INCLUDE_BUILD" to "false")
+) {
     setupAndCheckout(rp)
     rp.subs.forEach {
         uses(
@@ -51,7 +53,8 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(id = "${rp.name}-builder
 }
 
 fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
-    id = "${rp.name}-publisher", runsOn = MacOSLatest, needs = listOf(after)
+    id = "${rp.name}-publisher", runsOn = MacOSLatest, needs = listOf(after),
+    env = linkedMapOf("INCLUDE_BUILD" to "true")
 ) {
     setupAndCheckout(rp)
     rp.subs.forEach {
@@ -72,7 +75,6 @@ val workflow = workflow(
         "ASOFT_MAVEN_PGP_PASSWORD" to expr { secrets["ASOFT_MAVEN_PGP_PASSWORD"].toString() },
         "ASOFT_NEXUS_PASSWORD" to expr { secrets["ASOFT_NEXUS_PASSWORD"].toString() },
         "ASOFT_NEXUS_USERNAME" to expr { secrets["ASOFT_NEXUS_USERNAME"].toString() },
-        "INCLUDE_BUILD" to "true"
     )
 ) {
     val buildJobs = projects.map { buildProject(it) }

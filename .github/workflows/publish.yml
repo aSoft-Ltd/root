@@ -14,11 +14,12 @@ env:
   ASOFT_MAVEN_PGP_PASSWORD: ${{ secrets.ASOFT_MAVEN_PGP_PASSWORD }}
   ASOFT_NEXUS_PASSWORD: ${{ secrets.ASOFT_NEXUS_PASSWORD }}
   ASOFT_NEXUS_USERNAME: ${{ secrets.ASOFT_NEXUS_USERNAME }}
-  INCLUDE_BUILD: true
 
 jobs:
   "live-builder":
     runs-on: "macos-latest"
+    env:
+      INCLUDE_BUILD: false
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -28,7 +29,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 18
-          distribution: zulu
+          distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
         working-directory: live
@@ -59,6 +60,8 @@ jobs:
           build-root-directory: ./live
   "viewmodel-builder":
     runs-on: "macos-latest"
+    env:
+      INCLUDE_BUILD: false
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -68,7 +71,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 18
-          distribution: zulu
+          distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
         working-directory: viewmodel
@@ -109,6 +112,8 @@ jobs:
     runs-on: "macos-latest"
     needs:
       - "rendezvous"
+    env:
+      INCLUDE_BUILD: true
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -118,7 +123,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 18
-          distribution: zulu
+          distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
         working-directory: live
@@ -151,6 +156,8 @@ jobs:
     runs-on: "macos-latest"
     needs:
       - "rendezvous"
+    env:
+      INCLUDE_BUILD: true
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -160,7 +167,7 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 18
-          distribution: zulu
+          distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
         working-directory: viewmodel

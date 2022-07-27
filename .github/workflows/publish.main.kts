@@ -51,8 +51,7 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(id = "${rp.name}-builder
 }
 
 fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
-    id = "${rp.name}-publisher", runsOn = MacOSLatest, needs = listOf(after),
-    env = linkedMapOf("INCLUDE_BUILD" to "true")
+    id = "${rp.name}-publisher", runsOn = MacOSLatest, needs = listOf(after)
 ) {
     setupAndCheckout(rp)
     rp.subs.forEach {
@@ -76,8 +75,8 @@ val workflow = workflow(
         "INCLUDE_BUILD" to "true"
     )
 ) {
-//    val buildJobs = projects.map { buildProject(it) }
-    val buildJobs = listOf<Job>()
+    val buildJobs = projects.map { buildProject(it) }
+//    val buildJobs = listOf<Job>()
     val rendezvous = job(id = "rendezvous", runsOn = UbuntuLatest, needs = buildJobs) {
         run("""echo "all builds completed. Beginning deployment"""")
     }

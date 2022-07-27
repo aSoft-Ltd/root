@@ -23,6 +23,10 @@ allprojects {
         group = "tz.co.asoft"
         version = asoft.versions.root.get()
     }
+
+    if (System.getenv("INCLUDE_BUILD") == "true") afterEvaluate {
+        tasks.findByName("compileCommonMainKotlinMetadata")?.enabled = false
+    }
 }
 
 val releases = file("Release.next.md").readText()

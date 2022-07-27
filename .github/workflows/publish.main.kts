@@ -6,7 +6,6 @@
 import it.krzeminski.githubactions.actions.actions.CheckoutV3
 import it.krzeminski.githubactions.actions.actions.SetupJavaV3
 import it.krzeminski.githubactions.actions.actions.SetupJavaV3.Distribution.Corretto
-import it.krzeminski.githubactions.actions.actions.SetupJavaV3.Distribution.Zulu
 import it.krzeminski.githubactions.actions.gradle.GradleBuildActionV2
 import it.krzeminski.githubactions.domain.Job
 import it.krzeminski.githubactions.domain.RunnerType.MacOSLatest
@@ -56,19 +55,21 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(
 }
 
 fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
-    id = "${rp.name}-publisher", runsOn = MacOSLatest, needs = listOf(after),
-    env = linkedMapOf("INCLUDE_BUILD" to "true")
+    id = "${rp.name}-publisher", runsOn = MacOSLatest, needs = listOf(after)
 ) {
     setupAndCheckout(rp)
     rp.subs.forEach {
         val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
-        listOf(false, true).forEach { includeBuild ->
-            uses(
-                name = "publishing ${rp.name}-$it [INCLUDE_BUILD=$includeBuild]",
-                env = linkedMapOf("INCLUDE_BUILD" to includeBuild.toString()),
-                action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
-            )
-        }
+        uses(
+            name = "building ${rp.name}-$it [INCLUDE_BUILD=false]",
+            env = linkedMapOf("INCLUDE_BUILD" to "false"),
+            action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
+        )
+        uses(
+            name = "publishing ${rp.name}-$it [INCLUDE_BUILD=true]",
+            env = linkedMapOf("INCLUDE_BUILD" to "true"),
+            action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
+        )
     }
 }
 

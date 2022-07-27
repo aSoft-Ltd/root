@@ -192,8 +192,6 @@ jobs:
     runs-on: "macos-latest"
     needs:
       - "rendezvous"
-    env:
-      INCLUDE_BUILD: true
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -209,7 +207,7 @@ jobs:
         working-directory: live
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing live-core [INCLUDE_BUILD=false]
+        name: building live-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-core:publishToSonatype closeAndReleaseStagingRepository
@@ -225,7 +223,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
       - id: step-5
-        name: publishing live-coroutines [INCLUDE_BUILD=false]
+        name: building live-coroutines [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-coroutines:publishToSonatype closeAndReleaseStagingRepository
@@ -241,7 +239,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
       - id: step-7
-        name: publishing live-react [INCLUDE_BUILD=false]
+        name: building live-react [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-react:publishToSonatype closeAndReleaseStagingRepository
@@ -257,7 +255,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
       - id: step-9
-        name: publishing live-test [INCLUDE_BUILD=false]
+        name: building live-test [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-test:publishToSonatype closeAndReleaseStagingRepository
@@ -276,8 +274,6 @@ jobs:
     runs-on: "macos-latest"
     needs:
       - "rendezvous"
-    env:
-      INCLUDE_BUILD: true
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -293,7 +289,7 @@ jobs:
         working-directory: viewmodel
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing viewmodel-core [INCLUDE_BUILD=false]
+        name: building viewmodel-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :viewmodel-core:publishToSonatype closeAndReleaseStagingRepository
@@ -309,7 +305,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
       - id: step-5
-        name: publishing viewmodel-coroutines [INCLUDE_BUILD=false]
+        name: building viewmodel-coroutines [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :viewmodel-coroutines:publishToSonatype closeAndReleaseStagingRepository
@@ -325,7 +321,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
       - id: step-7
-        name: publishing viewmodel-react [INCLUDE_BUILD=false]
+        name: building viewmodel-react [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :viewmodel-react:publishToSonatype closeAndReleaseStagingRepository
@@ -341,7 +337,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
       - id: step-9
-        name: publishing viewmodel-test [INCLUDE_BUILD=false]
+        name: building viewmodel-test [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :viewmodel-test:publishToSonatype closeAndReleaseStagingRepository

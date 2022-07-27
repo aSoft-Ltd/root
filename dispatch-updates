@@ -22,7 +22,7 @@ gradleUpdates() {
 }
 
 gitCommits() {
-  git submodule foreach git ac "Updated gradle versions" | echo "skipping"
+  git submodule foreach git ac "Updated gradle versions" | echo "OK"
   git ac "Updated gradle versions"
 }
 

@@ -25,7 +25,7 @@ data class RootProject(
 )
 
 val projects = listOf(
-    RootProject("live", "live", listOf("core", "coroutines", "react")),
+    RootProject("live", "live", listOf("core", "coroutines", "react", "test")),
     RootProject("viewmodel", "viewmodel", listOf("core", "coroutines", "react", "test"))
 )
 
@@ -71,8 +71,8 @@ val workflow = workflow(
         "ASOFT_NEXUS_USERNAME" to expr { secrets["ASOFT_NEXUS_USERNAME"].toString() },
     )
 ) {
-//    val buildJobs = projects.map { buildProject(it) }
-    val buildJobs = listOf<Job>()
+    val buildJobs = projects.map { buildProject(it) }
+//    val buildJobs = listOf<Job>()
     val rendezvous = job(id = "rendezvous", runsOn = UbuntuLatest, needs = buildJobs) {
         run("""echo "all builds completed. Beginning deployment"""")
     }

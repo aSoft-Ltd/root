@@ -6,6 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/coroutines/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/coroutines/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/coroutines/src/commonMain/kotlin/live/AsFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/live/coroutines/src/commonMain/kotlin/live/LiveCoroutinesUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/coroutines/src/commonMain/kotlin/live/SuspendingUtils.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/live/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/react/src/main/kotlin/hooks.kt" beforeDir="false" afterPath="$PROJECT_DIR$/live/react/src/main/kotlin/hooks.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/react/src/main/kotlin/live/LiveStateUtils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/live/react/src/main/kotlin/live/LiveStateUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/gradle/versions/kotlinx.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

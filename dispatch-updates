@@ -21,14 +21,9 @@ gradleUpdates() {
     done
 }
 
-gitCommits() {
-  git ac "Updated gradle versions"
-}
-
 main() {
   workflowUpdates
   gradleUpdates
-  gitCommits
 }
 
 main

@@ -104,30 +104,6 @@ jobs:
           build-root-directory: ./viewmodel
         env:
           INCLUDE_BUILD: true
-      - id: step-5
-        name: building viewmodel-coroutines [INCLUDE_BUILD=true]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-coroutines:build
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: true
-      - id: step-6
-        name: building viewmodel-react [INCLUDE_BUILD=true]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-react:build
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: true
-      - id: step-7
-        name: building viewmodel-test [INCLUDE_BUILD=true]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-test:build
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: true
   "rendezvous":
     runs-on: "ubuntu-latest"
     needs:
@@ -225,30 +201,6 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :viewmodel-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: true
-      - id: step-5
-        name: publishing viewmodel-coroutines [INCLUDE_BUILD=true]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-coroutines:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: true
-      - id: step-6
-        name: publishing viewmodel-react [INCLUDE_BUILD=true]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-react:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: true
-      - id: step-7
-        name: publishing viewmodel-test [INCLUDE_BUILD=true]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-test:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./viewmodel
         env:
           INCLUDE_BUILD: true

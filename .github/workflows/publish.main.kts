@@ -25,7 +25,7 @@ data class RootProject(
 
 val projects = listOf(
     RootProject("live", "live", listOf("core", "coroutines", "react", "test")),
-    RootProject("viewmodel", "viewmodel", listOf("core", "coroutines", "react", "test"))
+    RootProject("viewmodel", "viewmodel", listOf("core"))
 )
 
 fun JobBuilder.setupAndCheckout(rp: RootProject) {

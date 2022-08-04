@@ -102,14 +102,14 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: koncurrent/primitives
+        working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
         name: building koncurrent-primitives-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-core:build
-          build-root-directory: ./koncurrent/primitives
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: false
       - id: step-4
@@ -117,7 +117,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-core:build
-          build-root-directory: ./koncurrent/primitives
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
       - id: step-5
@@ -125,7 +125,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-coroutines:build
-          build-root-directory: ./koncurrent/primitives
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
       - id: step-6
@@ -133,7 +133,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-mock:build
-          build-root-directory: ./koncurrent/primitives
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
   "koncurrent-later-builder":
@@ -150,14 +150,14 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: koncurrent/later
+        working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
         name: building koncurrent-later-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-core:build
-          build-root-directory: ./koncurrent/later
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: false
       - id: step-4
@@ -165,7 +165,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-core:build
-          build-root-directory: ./koncurrent/later
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
       - id: step-5
@@ -173,7 +173,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-coroutines:build
-          build-root-directory: ./koncurrent/later
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
       - id: step-6
@@ -181,7 +181,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-test:build
-          build-root-directory: ./koncurrent/later
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
   "live-builder":
@@ -441,14 +441,14 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: koncurrent/primitives
+        working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
         name: building koncurrent-primitives-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-core:build
-          build-root-directory: ./koncurrent/primitives
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: false
       - id: step-4
@@ -456,7 +456,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./koncurrent/primitives
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
       - id: step-5
@@ -464,7 +464,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-coroutines:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./koncurrent/primitives
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
       - id: step-6
@@ -472,7 +472,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-mock:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./koncurrent/primitives
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
   "koncurrent-later-publisher":
@@ -491,14 +491,14 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: koncurrent/later
+        working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
         name: building koncurrent-later-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-core:build
-          build-root-directory: ./koncurrent/later
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: false
       - id: step-4
@@ -506,7 +506,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./koncurrent/later
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
       - id: step-5
@@ -514,7 +514,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-coroutines:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./koncurrent/later
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
       - id: step-6
@@ -522,7 +522,7 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-test:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./koncurrent/later
+          build-root-directory: ./koncurrent
         env:
           INCLUDE_BUILD: true
   "live-publisher":

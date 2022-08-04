@@ -5,28 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/cache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/expect" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/versions/npm.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/versions/squareup.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/publish.main.kts" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.main.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expect/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/expect/core/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expect/coroutines/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/expect/coroutines/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expect/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/expect/gradle/versions/asoft.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions" beforeDir="false" afterPath="$PROJECT_DIR$/functions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/core/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/functions/gradle/versions/asoft.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/gradle/versions/asoft.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/test/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/test/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live" beforeDir="false" afterPath="$PROJECT_DIR$/live" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/live/gradle/versions/asoft.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewmodel" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewmodel/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/gradle/versions/asoft.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

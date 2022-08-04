@@ -5,17 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/functions" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/koncurrent" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/expect" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/versions/npm.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gradle/versions/squareup.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/publish.main.kts" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.main.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/expect/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/coroutines/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/expect/coroutines/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/expect/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions" beforeDir="false" afterPath="$PROJECT_DIR$/functions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/functions/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/test/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/test/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live" beforeDir="false" afterPath="$PROJECT_DIR$/live" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/live/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewmodel" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/gradle/versions/asoft.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,23 +50,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root/koncurrent/build.gradle.kts",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root/cache/build.gradle.kts&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/cache" />
+      <recent name="$PROJECT_DIR$/expect" />
       <recent name="$PROJECT_DIR$/koncurrent" />
       <recent name="$PROJECT_DIR$/functions" />
       <recent name="$PROJECT_DIR$/live" />
-      <recent name="$PROJECT_DIR$/.github/workflows" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/functions/core" />

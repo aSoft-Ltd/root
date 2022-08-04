@@ -14,3 +14,11 @@
 	path = koncurrent
 	url = https://github.com/aSoft-Ltd/koncurrent.git
 	branch = main
+[submodule "expect"]
+	path = expect
+	url = https://github.com/aSoft-Ltd/expect.git
+	branch = main
+[submodule "cache"]
+	path = cache
+	url = https://github.com/aSoft-Ltd/cache.git
+	branch = main

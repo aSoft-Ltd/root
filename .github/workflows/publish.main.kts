@@ -25,8 +25,12 @@ data class RootProject(
 
 val projects = listOf(
     RootProject("functions", "functions", listOf("core")),
+    RootProject("expect", "expect", listOf("core", "coroutines")),
+    RootProject("koncurrent-primitives", "koncurrent/primitives", listOf("core", "coroutines", "mock")),
+    RootProject("koncurrent-later", "koncurrent/later", listOf("core", "coroutines", "test")),
     RootProject("live", "live", listOf("core", "coroutines", "react", "test")),
-    RootProject("viewmodel", "viewmodel", listOf("core"))
+    RootProject("viewmodel", "viewmodel", listOf("core")),
+    RootProject("cache", "cache", listOf("api", "browser", "file", "mock", "react-native"))
 )
 
 fun JobBuilder.setupAndCheckout(rp: RootProject) {

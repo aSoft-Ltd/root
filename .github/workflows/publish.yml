@@ -17,7 +17,7 @@ env:
 
 jobs:
   "functions-builder":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -49,7 +49,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "expect-builder":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -89,7 +89,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "koncurrent-primitives-builder":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -137,7 +137,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "koncurrent-later-builder":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -185,7 +185,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "live-builder":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -241,7 +241,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "viewmodel-builder":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -273,7 +273,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "cache-builder":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     steps:
       - id: step-0
         uses: actions/checkout@v3
@@ -350,7 +350,7 @@ jobs:
       - id: step-0
         run: echo "all builds completed. Beginning deployment"
   "functions-publisher":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     needs:
       - "rendezvous"
     steps:
@@ -384,7 +384,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "expect-publisher":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     needs:
       - "rendezvous"
     steps:
@@ -426,7 +426,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "koncurrent-primitives-publisher":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     needs:
       - "rendezvous"
     steps:
@@ -476,7 +476,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "koncurrent-later-publisher":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     needs:
       - "rendezvous"
     steps:
@@ -526,7 +526,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "live-publisher":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     needs:
       - "rendezvous"
     steps:
@@ -584,7 +584,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "viewmodel-publisher":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     needs:
       - "rendezvous"
     steps:
@@ -618,7 +618,7 @@ jobs:
         env:
           INCLUDE_BUILD: true
   "cache-publisher":
-    runs-on: "macos-latest"
+    runs-on: "ubuntu-latest"
     needs:
       - "rendezvous"
     steps:

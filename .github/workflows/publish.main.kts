@@ -44,7 +44,7 @@ fun JobBuilder.setupAndCheckout(rp: RootProject) {
 }
 
 fun WorkflowBuilder.buildProject(rp: RootProject) = job(
-    id = "${rp.name}-builder", runsOn = MacOSLatest
+    id = "${rp.name}-builder", runsOn = UbuntuLatest
 ) {
     setupAndCheckout(rp)
     rp.subs.forEachIndexed { index, it ->
@@ -65,7 +65,7 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(
 }
 
 fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
-    id = "${rp.name}-publisher", runsOn = MacOSLatest, needs = listOf(after)
+    id = "${rp.name}-publisher", runsOn = UbuntuLatest, needs = listOf(after)
 ) {
     setupAndCheckout(rp)
     rp.subs.forEachIndexed { index, it ->

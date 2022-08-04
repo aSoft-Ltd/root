@@ -6,7 +6,7 @@ foundation = "1.5.2"
 expect-core = { module = "tz.co.asoft:expect-core", version.ref = "foundation" }
 expect-coroutines = { module = "tz.co.asoft:expect-coroutines", version.ref = "foundation" }
 
-functions = { module = "tz.co.asoft:functions", version.ref = "foundation" }
+functions-core = { module = "tz.co.asoft:functions-core", version.ref = "root" }
 
 koncurrent-primitives-core = { module = "tz.co.asoft:koncurrent-primitives-core", version.ref = "foundation" }
 koncurrent-primitives-coroutines = { module = "tz.co.asoft:koncurrent-primitives-coroutines", version.ref = "foundation" }

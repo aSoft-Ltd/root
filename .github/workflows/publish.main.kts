@@ -24,6 +24,7 @@ data class RootProject(
 )
 
 val projects = listOf(
+    RootProject("functions", "functions", listOf("core")),
     RootProject("live", "live", listOf("core", "coroutines", "react", "test")),
     RootProject("viewmodel", "viewmodel", listOf("core"))
 )

@@ -47,21 +47,14 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(
     id = "${rp.name}-builder", runsOn = UbuntuLatest
 ) {
     setupAndCheckout(rp)
-    rp.subs.forEachIndexed { index, it ->
-
-        // build with gradle subprojects so that when building with composite builds kotlinNpmInstall task is skipped
-        if (index == 0) uses(
-            name = "building ${rp.name}-$it [INCLUDE_BUILD=false]",
-            env = linkedMapOf("INCLUDE_BUILD" to "false"),
-            action = GradleBuildActionV2(arguments = ":${rp.name}-$it:build", buildRootDirectory = "./${rp.path}")
-        )
-
+    rp.subs.forEach {
         uses(
-            name = "building ${rp.name}-$it [INCLUDE_BUILD=true]",
-            env = linkedMapOf("INCLUDE_BUILD" to "true"),
             action = GradleBuildActionV2(arguments = ":${rp.name}-$it:build", buildRootDirectory = "./${rp.path}")
         )
     }
+    uses(
+        action = GradleBuildActionV2(arguments = "build", buildRootDirectory = "./${rp.path}")
+    )
 }
 
 fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
@@ -69,16 +62,9 @@ fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
 ) {
     setupAndCheckout(rp)
     rp.subs.forEachIndexed { index, it ->
-        // build with gradle subprojects so that when building with composite builds kotlinNpmInstall task is skipped
-        if (index == 0) uses(
-            name = "building ${rp.name}-$it [INCLUDE_BUILD=false]",
-            env = linkedMapOf("INCLUDE_BUILD" to "false"),
-            action = GradleBuildActionV2(arguments = ":${rp.name}-$it:build", buildRootDirectory = "./${rp.path}")
-        )
         val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
         uses(
-            name = "publishing ${rp.name}-$it [INCLUDE_BUILD=true]",
-            env = linkedMapOf("INCLUDE_BUILD" to "true"),
+            name = "publishing ${rp.name}-$it",
             action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
         )
     }

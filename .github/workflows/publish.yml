@@ -33,21 +33,15 @@ jobs:
         working-directory: functions
         run: chmod +x ./gradlew
       - id: step-3
-        name: building functions-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :functions-core:build
           build-root-directory: ./functions
-        env:
-          INCLUDE_BUILD: false
       - id: step-4
-        name: building functions-core [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :functions-core:build
+          arguments: build
           build-root-directory: ./functions
-        env:
-          INCLUDE_BUILD: true
   "expect-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -65,29 +59,20 @@ jobs:
         working-directory: expect
         run: chmod +x ./gradlew
       - id: step-3
-        name: building expect-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :expect-core:build
           build-root-directory: ./expect
-        env:
-          INCLUDE_BUILD: false
       - id: step-4
-        name: building expect-core [INCLUDE_BUILD=true]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :expect-core:build
-          build-root-directory: ./expect
-        env:
-          INCLUDE_BUILD: true
-      - id: step-5
-        name: building expect-coroutines [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :expect-coroutines:build
           build-root-directory: ./expect
-        env:
-          INCLUDE_BUILD: true
+      - id: step-5
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+          build-root-directory: ./expect
   "koncurrent-primitives-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -105,37 +90,25 @@ jobs:
         working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
-        name: building koncurrent-primitives-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-core:build
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: false
       - id: step-4
-        name: building koncurrent-primitives-core [INCLUDE_BUILD=true]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :koncurrent-primitives-core:build
-          build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
-      - id: step-5
-        name: building koncurrent-primitives-coroutines [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-coroutines:build
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
-      - id: step-6
-        name: building koncurrent-primitives-mock [INCLUDE_BUILD=true]
+      - id: step-5
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-mock:build
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
+      - id: step-6
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+          build-root-directory: ./koncurrent
   "koncurrent-later-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -153,37 +126,25 @@ jobs:
         working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
-        name: building koncurrent-later-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-core:build
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: false
       - id: step-4
-        name: building koncurrent-later-core [INCLUDE_BUILD=true]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :koncurrent-later-core:build
-          build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
-      - id: step-5
-        name: building koncurrent-later-coroutines [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-coroutines:build
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
-      - id: step-6
-        name: building koncurrent-later-test [INCLUDE_BUILD=true]
+      - id: step-5
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-test:build
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
+      - id: step-6
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+          build-root-directory: ./koncurrent
   "live-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -201,45 +162,30 @@ jobs:
         working-directory: live
         run: chmod +x ./gradlew
       - id: step-3
-        name: building live-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-core:build
           build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: false
       - id: step-4
-        name: building live-core [INCLUDE_BUILD=true]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-core:build
-          build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: true
-      - id: step-5
-        name: building live-coroutines [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-coroutines:build
           build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: true
-      - id: step-6
-        name: building live-react [INCLUDE_BUILD=true]
+      - id: step-5
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-react:build
           build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: true
-      - id: step-7
-        name: building live-test [INCLUDE_BUILD=true]
+      - id: step-6
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-test:build
           build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: true
+      - id: step-7
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+          build-root-directory: ./live
   "viewmodel-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -257,21 +203,15 @@ jobs:
         working-directory: viewmodel
         run: chmod +x ./gradlew
       - id: step-3
-        name: building viewmodel-core [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :viewmodel-core:build
           build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: false
       - id: step-4
-        name: building viewmodel-core [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :viewmodel-core:build
+          arguments: build
           build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: true
   "cache-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -289,53 +229,35 @@ jobs:
         working-directory: cache
         run: chmod +x ./gradlew
       - id: step-3
-        name: building cache-api [INCLUDE_BUILD=false]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-api:build
           build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: false
       - id: step-4
-        name: building cache-api [INCLUDE_BUILD=true]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :cache-api:build
-          build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: true
-      - id: step-5
-        name: building cache-browser [INCLUDE_BUILD=true]
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-browser:build
           build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: true
-      - id: step-6
-        name: building cache-file [INCLUDE_BUILD=true]
+      - id: step-5
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-file:build
           build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: true
-      - id: step-7
-        name: building cache-mock [INCLUDE_BUILD=true]
+      - id: step-6
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-mock:build
           build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: true
-      - id: step-8
-        name: building cache-react-native [INCLUDE_BUILD=true]
+      - id: step-7
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-react-native:build
           build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: true
+      - id: step-8
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+          build-root-directory: ./cache
   "rendezvous":
     runs-on: "ubuntu-latest"
     needs:
@@ -368,21 +290,11 @@ jobs:
         working-directory: functions
         run: chmod +x ./gradlew
       - id: step-3
-        name: building functions-core [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :functions-core:build
-          build-root-directory: ./functions
-        env:
-          INCLUDE_BUILD: false
-      - id: step-4
-        name: publishing functions-core [INCLUDE_BUILD=true]
+        name: publishing functions-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :functions-core:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./functions
-        env:
-          INCLUDE_BUILD: true
   "expect-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -402,29 +314,17 @@ jobs:
         working-directory: expect
         run: chmod +x ./gradlew
       - id: step-3
-        name: building expect-core [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :expect-core:build
-          build-root-directory: ./expect
-        env:
-          INCLUDE_BUILD: false
-      - id: step-4
-        name: publishing expect-core [INCLUDE_BUILD=true]
+        name: publishing expect-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :expect-core:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./expect
-        env:
-          INCLUDE_BUILD: true
-      - id: step-5
-        name: publishing expect-coroutines [INCLUDE_BUILD=true]
+      - id: step-4
+        name: publishing expect-coroutines
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :expect-coroutines:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./expect
-        env:
-          INCLUDE_BUILD: true
   "koncurrent-primitives-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -444,37 +344,23 @@ jobs:
         working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
-        name: building koncurrent-primitives-core [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :koncurrent-primitives-core:build
-          build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: false
-      - id: step-4
-        name: publishing koncurrent-primitives-core [INCLUDE_BUILD=true]
+        name: publishing koncurrent-primitives-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-core:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
-      - id: step-5
-        name: publishing koncurrent-primitives-coroutines [INCLUDE_BUILD=true]
+      - id: step-4
+        name: publishing koncurrent-primitives-coroutines
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-coroutines:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
-      - id: step-6
-        name: publishing koncurrent-primitives-mock [INCLUDE_BUILD=true]
+      - id: step-5
+        name: publishing koncurrent-primitives-mock
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-mock:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
   "koncurrent-later-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -494,37 +380,23 @@ jobs:
         working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
-        name: building koncurrent-later-core [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :koncurrent-later-core:build
-          build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: false
-      - id: step-4
-        name: publishing koncurrent-later-core [INCLUDE_BUILD=true]
+        name: publishing koncurrent-later-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-core:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
-      - id: step-5
-        name: publishing koncurrent-later-coroutines [INCLUDE_BUILD=true]
+      - id: step-4
+        name: publishing koncurrent-later-coroutines
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-coroutines:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
-      - id: step-6
-        name: publishing koncurrent-later-test [INCLUDE_BUILD=true]
+      - id: step-5
+        name: publishing koncurrent-later-test
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-test:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./koncurrent
-        env:
-          INCLUDE_BUILD: true
   "live-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -544,45 +416,29 @@ jobs:
         working-directory: live
         run: chmod +x ./gradlew
       - id: step-3
-        name: building live-core [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-core:build
-          build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: false
-      - id: step-4
-        name: publishing live-core [INCLUDE_BUILD=true]
+        name: publishing live-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-core:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: true
-      - id: step-5
-        name: publishing live-coroutines [INCLUDE_BUILD=true]
+      - id: step-4
+        name: publishing live-coroutines
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-coroutines:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: true
-      - id: step-6
-        name: publishing live-react [INCLUDE_BUILD=true]
+      - id: step-5
+        name: publishing live-react
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-react:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: true
-      - id: step-7
-        name: publishing live-test [INCLUDE_BUILD=true]
+      - id: step-6
+        name: publishing live-test
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-test:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./live
-        env:
-          INCLUDE_BUILD: true
   "viewmodel-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -602,21 +458,11 @@ jobs:
         working-directory: viewmodel
         run: chmod +x ./gradlew
       - id: step-3
-        name: building viewmodel-core [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :viewmodel-core:build
-          build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: false
-      - id: step-4
-        name: publishing viewmodel-core [INCLUDE_BUILD=true]
+        name: publishing viewmodel-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :viewmodel-core:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./viewmodel
-        env:
-          INCLUDE_BUILD: true
   "cache-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -636,51 +482,33 @@ jobs:
         working-directory: cache
         run: chmod +x ./gradlew
       - id: step-3
-        name: building cache-api [INCLUDE_BUILD=false]
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :cache-api:build
-          build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: false
-      - id: step-4
-        name: publishing cache-api [INCLUDE_BUILD=true]
+        name: publishing cache-api
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-api:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: true
-      - id: step-5
-        name: publishing cache-browser [INCLUDE_BUILD=true]
+      - id: step-4
+        name: publishing cache-browser
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-browser:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: true
-      - id: step-6
-        name: publishing cache-file [INCLUDE_BUILD=true]
+      - id: step-5
+        name: publishing cache-file
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-file:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: true
-      - id: step-7
-        name: publishing cache-mock [INCLUDE_BUILD=true]
+      - id: step-6
+        name: publishing cache-mock
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-mock:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: true
-      - id: step-8
-        name: publishing cache-react-native [INCLUDE_BUILD=true]
+      - id: step-7
+        name: publishing cache-react-native
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-react-native:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./cache
-        env:
-          INCLUDE_BUILD: true
 

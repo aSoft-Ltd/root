@@ -54,10 +54,6 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(
             action = GradleBuildActionV2(arguments = task, buildRootDirectory = "./${rp.path}")
         )
     }
-    uses(
-        name = "./gradlew build",
-        action = GradleBuildActionV2(arguments = "build", buildRootDirectory = "./${rp.path}")
-    )
 }
 
 fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(

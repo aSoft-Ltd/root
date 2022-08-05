@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.main.kts" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.main.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/cache/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/kotlinz.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/live/test/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/test/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewmodel/kotlin-js-store/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/kotlin-js-store/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewmodel/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

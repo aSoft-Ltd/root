@@ -48,11 +48,14 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(
 ) {
     setupAndCheckout(rp)
     rp.subs.forEach {
+        val task = ":${rp.name}-$it:build"
         uses(
-            action = GradleBuildActionV2(arguments = ":${rp.name}-$it:build", buildRootDirectory = "./${rp.path}")
+            name = "./gradlew $task",
+            action = GradleBuildActionV2(arguments = task, buildRootDirectory = "./${rp.path}")
         )
     }
     uses(
+        name = "./gradlew build",
         action = GradleBuildActionV2(arguments = "build", buildRootDirectory = "./${rp.path}")
     )
 }

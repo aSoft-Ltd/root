@@ -33,11 +33,13 @@ jobs:
         working-directory: functions
         run: chmod +x ./gradlew
       - id: step-3
+        name: ./gradlew :functions-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :functions-core:build
           build-root-directory: ./functions
       - id: step-4
+        name: ./gradlew build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
@@ -59,16 +61,19 @@ jobs:
         working-directory: expect
         run: chmod +x ./gradlew
       - id: step-3
+        name: ./gradlew :expect-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :expect-core:build
           build-root-directory: ./expect
       - id: step-4
+        name: ./gradlew :expect-coroutines:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :expect-coroutines:build
           build-root-directory: ./expect
       - id: step-5
+        name: ./gradlew build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
@@ -90,21 +95,25 @@ jobs:
         working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
+        name: ./gradlew :koncurrent-primitives-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-core:build
           build-root-directory: ./koncurrent
       - id: step-4
+        name: ./gradlew :koncurrent-primitives-coroutines:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-coroutines:build
           build-root-directory: ./koncurrent
       - id: step-5
+        name: ./gradlew :koncurrent-primitives-mock:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-primitives-mock:build
           build-root-directory: ./koncurrent
       - id: step-6
+        name: ./gradlew build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
@@ -126,21 +135,25 @@ jobs:
         working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
+        name: ./gradlew :koncurrent-later-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-core:build
           build-root-directory: ./koncurrent
       - id: step-4
+        name: ./gradlew :koncurrent-later-coroutines:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-coroutines:build
           build-root-directory: ./koncurrent
       - id: step-5
+        name: ./gradlew :koncurrent-later-test:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-test:build
           build-root-directory: ./koncurrent
       - id: step-6
+        name: ./gradlew build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
@@ -162,26 +175,31 @@ jobs:
         working-directory: live
         run: chmod +x ./gradlew
       - id: step-3
+        name: ./gradlew :live-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-core:build
           build-root-directory: ./live
       - id: step-4
+        name: ./gradlew :live-coroutines:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-coroutines:build
           build-root-directory: ./live
       - id: step-5
+        name: ./gradlew :live-react:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-react:build
           build-root-directory: ./live
       - id: step-6
+        name: ./gradlew :live-test:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :live-test:build
           build-root-directory: ./live
       - id: step-7
+        name: ./gradlew build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
@@ -203,11 +221,13 @@ jobs:
         working-directory: viewmodel
         run: chmod +x ./gradlew
       - id: step-3
+        name: ./gradlew :viewmodel-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :viewmodel-core:build
           build-root-directory: ./viewmodel
       - id: step-4
+        name: ./gradlew build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
@@ -229,31 +249,37 @@ jobs:
         working-directory: cache
         run: chmod +x ./gradlew
       - id: step-3
+        name: ./gradlew :cache-api:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-api:build
           build-root-directory: ./cache
       - id: step-4
+        name: ./gradlew :cache-browser:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-browser:build
           build-root-directory: ./cache
       - id: step-5
+        name: ./gradlew :cache-file:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-file:build
           build-root-directory: ./cache
       - id: step-6
+        name: ./gradlew :cache-mock:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-mock:build
           build-root-directory: ./cache
       - id: step-7
+        name: ./gradlew :cache-react-native:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-react-native:build
           build-root-directory: ./cache
       - id: step-8
+        name: ./gradlew build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build

@@ -38,12 +38,6 @@ jobs:
         with:
           arguments: :functions-core:build
           build-root-directory: ./functions
-      - id: step-4
-        name: ./gradlew build
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: build
-          build-root-directory: ./functions
   "expect-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -71,12 +65,6 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :expect-coroutines:build
-          build-root-directory: ./expect
-      - id: step-5
-        name: ./gradlew build
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: build
           build-root-directory: ./expect
   "koncurrent-primitives-builder":
     runs-on: "ubuntu-latest"
@@ -112,12 +100,6 @@ jobs:
         with:
           arguments: :koncurrent-primitives-mock:build
           build-root-directory: ./koncurrent
-      - id: step-6
-        name: ./gradlew build
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: build
-          build-root-directory: ./koncurrent
   "koncurrent-later-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -151,12 +133,6 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :koncurrent-later-test:build
-          build-root-directory: ./koncurrent
-      - id: step-6
-        name: ./gradlew build
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: build
           build-root-directory: ./koncurrent
   "live-builder":
     runs-on: "ubuntu-latest"
@@ -198,12 +174,6 @@ jobs:
         with:
           arguments: :live-test:build
           build-root-directory: ./live
-      - id: step-7
-        name: ./gradlew build
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: build
-          build-root-directory: ./live
   "viewmodel-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -225,12 +195,6 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :viewmodel-core:build
-          build-root-directory: ./viewmodel
-      - id: step-4
-        name: ./gradlew build
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: build
           build-root-directory: ./viewmodel
   "cache-builder":
     runs-on: "ubuntu-latest"
@@ -277,12 +241,6 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :cache-react-native:build
-          build-root-directory: ./cache
-      - id: step-8
-        name: ./gradlew build
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: build
           build-root-directory: ./cache
   "rendezvous":
     runs-on: "ubuntu-latest"

@@ -22,3 +22,7 @@
 	path = cache
 	url = https://github.com/aSoft-Ltd/cache.git
 	branch = main
+[submodule "math"]
+	path = math
+	url = https://github.com/aSoft-Ltd/math
+	branch = main

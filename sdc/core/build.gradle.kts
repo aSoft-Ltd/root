@@ -15,6 +15,7 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 api(projects.mathPointCore)
+                api(projects.mathVectorCore)
             }
         }
 

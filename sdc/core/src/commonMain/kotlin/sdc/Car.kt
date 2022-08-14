@@ -2,17 +2,19 @@ package sdc
 
 import math.MutablePoint2
 import math.XY
-import math.point.minusAssign
 import math.spatial.cordString
 import kotlin.math.abs
+import kotlin.math.cos
+import kotlin.math.sin
 
 
 class Car(
     val pos: MutablePoint2<Double>,
-    val size: XY<Int>
+    val size: XY<Int>,
+    val controls: Controls = Controls()
 ) {
 
-    val controls = Controls()
+    var angle = 0.0
 
     companion object {
         val MAX_FORWARD_SPEED = 3.0
@@ -54,7 +56,19 @@ class Car(
         if (abs(speed) < friction) {
             speed = 0.0
         }
-        pos.y -= speed
+
+        if (speed != 0.0) {
+            if (controls.right) {
+                angle += 0.03
+            }
+
+            if (controls.left) {
+                angle -= 0.03
+            }
+        }
+
+        pos.x += sin(angle) * speed
+        pos.y -= cos(angle) * speed
     }
 
     override fun toString() = "Car(pos=${pos.cordString()},size=${size.cordString()}"

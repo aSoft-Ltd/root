@@ -30,7 +30,7 @@ fun includeSubs(base: String, path: String = base, vararg subs: String) {
     }
 }
 
-val tmp = 3
+val tmp = 4
 
 rootProject.name = "asoft"
 
@@ -47,3 +47,4 @@ includeSubs("math-vector", "../math/vector", "core")
 // submodules
 includeSubs("sdc", ".", "core")
 includeSubs("sdc-ui", "ui", "core")
+includeSubs("sdc", "apps", "desktop", "web")

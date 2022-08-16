@@ -5,7 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/LaterPromise.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/cache/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/expect/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/Later.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/Later.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/LaterBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/LaterBuilder.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/LaterUtils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/internal/LaterHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/internal/LaterHandler.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/internal/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/internal/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonTest/kotlin/CanAwaitForMultipleLaters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonTest/kotlin/CanAwaitForMultipleLaters.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/jsMain/kotlin/koncurrent/later/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/jsMain/kotlin/koncurrent/later/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/jsMain/kotlin/koncurrent/later/internal/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/jsMain/kotlin/koncurrent/later/internal/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/jvmMain/kotlin/koncurrent/later/internal/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/jvmMain/kotlin/koncurrent/later/internal/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/jvmTest/java/LaterJavaApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/jvmTest/java/LaterJavaApiTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/nativeMain/kotlin/koncurrent/later/internal/PlatformConcurrentMonad.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/nativeMain/kotlin/koncurrent/later/internal/PlatformConcurrentMonad.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/nativeMain/kotlin/koncurrent/later/internal/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/nativeMain/kotlin/koncurrent/later/internal/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/coroutines/src/commonMain/kotlin/koncurrent/CoroutineBuilders.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/coroutines/src/commonMain/kotlin/koncurrent/CoroutineBuilders.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/later/test/src/jvmMain/kotlin/koncurrent/later/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/test/src/jvmMain/kotlin/koncurrent/later/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/primitives/mock/src/commonMain/kotlin/koncurrent/MockExecutorConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/primitives/mock/src/commonMain/kotlin/koncurrent/MockExecutorConfig.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/spatial/generator/src/main/kotlin/math/generator/generateMutableBinaryOperations.kt" beforeDir="false" afterPath="$PROJECT_DIR$/math/spatial/generator/src/main/kotlin/math/generator/generateMutableBinaryOperations.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

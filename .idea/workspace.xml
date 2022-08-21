@@ -5,32 +5,51 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/LaterPromise.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.main.kts" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.main.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/cache/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expect/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/expect/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache" beforeDir="false" afterPath="$PROJECT_DIR$/cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/cache/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/gradle/versions/compose.toml" beforeDir="false" afterPath="$PROJECT_DIR$/cache/gradle/versions/compose.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/cache/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect" beforeDir="false" afterPath="$PROJECT_DIR$/expect" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/expect/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/gradle/versions/compose.toml" beforeDir="false" afterPath="$PROJECT_DIR$/expect/gradle/versions/compose.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/expect/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions" beforeDir="false" afterPath="$PROJECT_DIR$/functions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/gradle/versions/compose.toml" beforeDir="false" afterPath="$PROJECT_DIR$/functions/gradle/versions/compose.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/functions/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/versions/compose.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/kotlinz.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/koncurrent" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/Later.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/Later.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/LaterBuilder.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/LaterBuilder.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/LaterUtils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/internal/LaterHandler.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/internal/LaterHandler.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/internal/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonMain/kotlin/koncurrent/later/internal/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/commonTest/kotlin/CanAwaitForMultipleLaters.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/commonTest/kotlin/CanAwaitForMultipleLaters.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/jsMain/kotlin/koncurrent/later/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/jsMain/kotlin/koncurrent/later/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/jsMain/kotlin/koncurrent/later/internal/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/jsMain/kotlin/koncurrent/later/internal/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/jvmMain/kotlin/koncurrent/later/internal/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/jvmMain/kotlin/koncurrent/later/internal/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/jvmTest/java/LaterJavaApiTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/jvmTest/java/LaterJavaApiTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/nativeMain/kotlin/koncurrent/later/internal/PlatformConcurrentMonad.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/nativeMain/kotlin/koncurrent/later/internal/PlatformConcurrentMonad.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/core/src/nativeMain/kotlin/koncurrent/later/internal/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/core/src/nativeMain/kotlin/koncurrent/later/internal/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/coroutines/src/commonMain/kotlin/koncurrent/CoroutineBuilders.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/coroutines/src/commonMain/kotlin/koncurrent/CoroutineBuilders.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/later/test/src/jvmMain/kotlin/koncurrent/later/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/later/test/src/jvmMain/kotlin/koncurrent/later/Utils.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/primitives/mock/src/commonMain/kotlin/koncurrent/MockExecutorConfig.kt" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/primitives/mock/src/commonMain/kotlin/koncurrent/MockExecutorConfig.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/gradle/versions/compose.toml" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/gradle/versions/compose.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/compose/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/compose/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/compose/src/commonMain/kotlin/live/WatchAsState.kt" beforeDir="false" afterPath="$PROJECT_DIR$/live/compose/src/commonMain/kotlin/live/WatchAsState.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/coroutines/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/coroutines/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/gradle/versions/compose.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/live/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/react/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/react/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/react/src/test/kotlin/Redundant.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/live/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/settings.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/math/spatial/generator/src/main/kotlin/math/generator/generateMutableBinaryOperations.kt" beforeDir="false" afterPath="$PROJECT_DIR$/math/spatial/generator/src/main/kotlin/math/generator/generateMutableBinaryOperations.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/viewmodel/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/settings.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/test/src/commonMain/kotlin/live/internal/LiveExpectationImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/live/test/src/commonMain/kotlin/live/internal/LiveExpectationImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/test/src/commonTest/kotlin/LiveExpectationTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/live/test/src/commonTest/kotlin/LiveExpectationTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math" beforeDir="false" afterPath="$PROJECT_DIR$/math" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/math/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/gradle/versions/compose.toml" beforeDir="false" afterPath="$PROJECT_DIR$/math/gradle/versions/compose.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/math/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdc/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sdc/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdc/gradle/versions/compose.toml" beforeDir="false" afterPath="$PROJECT_DIR$/sdc/gradle/versions/compose.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdc/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/sdc/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/gradle/versions/compose.toml" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/gradle/versions/compose.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/gradle/versions/kotlinz.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,16 +73,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root/koncurrent/build.gradle.kts&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root/viewmodel/build.gradle.kts",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/cache" />

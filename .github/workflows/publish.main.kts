@@ -28,9 +28,15 @@ val projects = listOf(
     RootProject("expect", "expect", listOf("core", "coroutines")),
     RootProject("koncurrent-primitives", "koncurrent", listOf("core", "coroutines", "mock")),
     RootProject("koncurrent-later", "koncurrent", listOf("core", "coroutines", "test")),
-    RootProject("live", "live", listOf("core", "coroutines", "react", "test")),
+    RootProject("live", "live", listOf("core", "compose", "coroutines", "react", "test")),
     RootProject("viewmodel", "viewmodel", listOf("core")),
-    RootProject("cache", "cache", listOf("api", "browser", "file", "mock", "react-native"))
+    RootProject("cache", "cache", listOf("api", "browser", "file", "mock", "react-native")),
+
+    // math libs
+    RootProject("math", "math", listOf("core")),
+    RootProject("math-spatial", "math/spatial", listOf("core")),
+    RootProject("math-vector", "math/vector", listOf("core")),
+    RootProject("math-point", "math/point", listOf("core"))
 )
 
 fun JobBuilder.setupAndCheckout(rp: RootProject) {

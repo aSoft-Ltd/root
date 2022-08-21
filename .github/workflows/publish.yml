@@ -284,14 +284,14 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: math/spatial
+        working-directory: math
         run: chmod +x ./gradlew
       - id: step-3
         name: ./gradlew :math-spatial-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :math-spatial-core:build
-          build-root-directory: ./math/spatial
+          build-root-directory: ./math
   "math-vector-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -306,14 +306,14 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: math/vector
+        working-directory: math
         run: chmod +x ./gradlew
       - id: step-3
         name: ./gradlew :math-vector-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :math-vector-core:build
-          build-root-directory: ./math/vector
+          build-root-directory: ./math
   "math-point-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -328,14 +328,14 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: math/point
+        working-directory: math
         run: chmod +x ./gradlew
       - id: step-3
         name: ./gradlew :math-point-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :math-point-core:build
-          build-root-directory: ./math/point
+          build-root-directory: ./math
   "rendezvous":
     runs-on: "ubuntu-latest"
     needs:
@@ -639,14 +639,14 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: math/spatial
+        working-directory: math
         run: chmod +x ./gradlew
       - id: step-3
         name: publishing math-spatial-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :math-spatial-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./math/spatial
+          build-root-directory: ./math
   "math-vector-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -663,14 +663,14 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: math/vector
+        working-directory: math
         run: chmod +x ./gradlew
       - id: step-3
         name: publishing math-vector-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :math-vector-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./math/vector
+          build-root-directory: ./math
   "math-point-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -687,12 +687,12 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: math/point
+        working-directory: math
         run: chmod +x ./gradlew
       - id: step-3
         name: publishing math-point-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :math-point-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./math/point
+          build-root-directory: ./math
 

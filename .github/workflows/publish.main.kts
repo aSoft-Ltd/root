@@ -1,7 +1,6 @@
 #!/usr/bin/env kotlin
 
-@file:DependsOn("it.krzeminski:github-actions-kotlin-dsl:0.23.0")
-@file:Suppress("Since15")
+@file:DependsOn("it.krzeminski:github-actions-kotlin-dsl:0.23.0") @file:Suppress("Since15")
 
 import it.krzeminski.githubactions.actions.actions.CheckoutV3
 import it.krzeminski.githubactions.actions.actions.SetupJavaV3
@@ -18,9 +17,7 @@ import it.krzeminski.githubactions.dsl.workflow
 import it.krzeminski.githubactions.yaml.toYaml
 
 data class RootProject(
-    val name: String,
-    val path: String,
-    val subs: List<String>
+    val name: String, val path: String, val subs: List<String>
 )
 
 val projects = listOf(
@@ -34,9 +31,9 @@ val projects = listOf(
 
     // math libs
     RootProject("math", "math", listOf("core")),
-    RootProject("math-spatial", "math/spatial", listOf("core")),
-    RootProject("math-vector", "math/vector", listOf("core")),
-    RootProject("math-point", "math/point", listOf("core"))
+    RootProject("math-spatial", "math", listOf("core")),
+    RootProject("math-vector", "math", listOf("core")),
+    RootProject("math-point", "math", listOf("core"))
 )
 
 fun JobBuilder.setupAndCheckout(rp: RootProject) {
@@ -56,8 +53,7 @@ fun WorkflowBuilder.buildProject(rp: RootProject) = job(
     rp.subs.forEach {
         val task = ":${rp.name}-$it:build"
         uses(
-            name = "./gradlew $task",
-            action = GradleBuildActionV2(arguments = task, buildRootDirectory = "./${rp.path}")
+            name = "./gradlew $task", action = GradleBuildActionV2(arguments = task, buildRootDirectory = "./${rp.path}")
         )
     }
 }
@@ -69,17 +65,13 @@ fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
     rp.subs.forEachIndexed { index, it ->
         val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
         uses(
-            name = "publishing ${rp.name}-$it",
-            action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
+            name = "publishing ${rp.name}-$it", action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
         )
     }
 }
 
 val workflow = workflow(
-    name = "Build, Cache then Publish",
-    on = listOf(Push(branches = listOf("main"))),
-    sourceFile = __FILE__.toPath(),
-    env = linkedMapOf(
+    name = "Build, Cache then Publish", on = listOf(Push(branches = listOf("main"))), sourceFile = __FILE__.toPath(), env = linkedMapOf(
         "ASOFT_MAVEN_PGP_PRIVATE_KEY" to expr { secrets["ASOFT_MAVEN_PGP_PRIVATE_KEY"].toString() },
         "ASOFT_MAVEN_PGP_PASSWORD" to expr { secrets["ASOFT_MAVEN_PGP_PASSWORD"].toString() },
         "ASOFT_NEXUS_PASSWORD" to expr { secrets["ASOFT_NEXUS_PASSWORD"].toString() },

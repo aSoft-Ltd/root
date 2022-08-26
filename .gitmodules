@@ -26,3 +26,6 @@
 	path = math
 	url = https://github.com/aSoft-Ltd/math
 	branch = main
+[submodule "kida"]
+	path = kida
+	url = https://github.com/aSoft-Ltd/kida.git

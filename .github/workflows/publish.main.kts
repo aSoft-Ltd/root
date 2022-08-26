@@ -33,7 +33,9 @@ val projects = listOf(
     RootProject("math", "math", listOf("core")),
     RootProject("math-spatial", "math", listOf("core")),
     RootProject("math-vector", "math", listOf("core")),
-    RootProject("math-point", "math", listOf("core"))
+    RootProject("math-point", "math", listOf("core")),
+
+    RootProject("kida", "kida", listOf("core", "fake"))
 )
 
 fun JobBuilder.setupAndCheckout(rp: RootProject) {

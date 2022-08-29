@@ -353,12 +353,24 @@ jobs:
         working-directory: kida
         run: chmod +x ./gradlew
       - id: step-3
+        name: ./gradlew :kida-api:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :kida-api:build
+          build-root-directory: ./kida
+      - id: step-4
+        name: ./gradlew :kida-ktor:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :kida-ktor:build
+          build-root-directory: ./kida
+      - id: step-5
         name: ./gradlew :kida-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :kida-core:build
           build-root-directory: ./kida
-      - id: step-4
+      - id: step-6
         name: ./gradlew :kida-fake:build
         uses: gradle/gradle-build-action@v2
         with:
@@ -743,12 +755,24 @@ jobs:
         working-directory: kida
         run: chmod +x ./gradlew
       - id: step-3
+        name: publishing kida-api
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :kida-api:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./kida
+      - id: step-4
+        name: publishing kida-ktor
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :kida-ktor:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./kida
+      - id: step-5
         name: publishing kida-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :kida-core:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./kida
-      - id: step-4
+      - id: step-6
         name: publishing kida-fake
         uses: gradle/gradle-build-action@v2
         with:

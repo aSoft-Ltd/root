@@ -29,3 +29,9 @@
 [submodule "kida"]
 	path = kida
 	url = https://github.com/aSoft-Ltd/kida.git
+[submodule "kash"]
+	path = kash
+	url = https://github.com/aSoft-Ltd/kash.git
+[submodule "formatter"]
+	path = formatter
+	url = https://github.com/aSoft-Ltd/formatter.git

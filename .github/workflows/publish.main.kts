@@ -29,13 +29,16 @@ val projects = listOf(
     RootProject("viewmodel", "viewmodel", listOf("core")),
     RootProject("cache", "cache", listOf("api", "browser", "file", "mock", "react-native")),
 
+    RootProject("formatter", "formatter", listOf("core")),
+    RootProject("kash", "kash", listOf("currency", "money")),
+    
     // math libs
     RootProject("math", "math", listOf("core")),
     RootProject("math-spatial", "math", listOf("core")),
     RootProject("math-vector", "math", listOf("core")),
     RootProject("math-point", "math", listOf("core")),
 
-    RootProject("kida", "kida", listOf("api", "ktor","core","fake"))
+    RootProject("kida", "kida", listOf("api", "ktor", "core", "fake"))
 )
 
 fun JobBuilder.setupAndCheckout(rp: RootProject) {

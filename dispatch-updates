@@ -3,22 +3,23 @@ set -xe
 
 workflowUpdates() {
   echo "Rebuilding workflows"
-  ./.github/workflows/publish.main.kts > ./.github/workflows/publish.yml
+  ./.github/workflows/publish.main.kts >./.github/workflows/publish.yml
 }
 
 gradleUpdates() {
-    echo "Updating gradle"
-    for subdir in */; do
-      if [ "$subdir" != "gradle/" ]; then
-        project=$subdir
-        cp ./gradle "$project" -r
-  	  cp ./gradle.properties "$project"
-  	  cp ./local.properties "$project"
-     	  cp ./build.gradle.kts "$project"
-   	  cp ./gradlew "$project"
-  	  cp ./gradlew.bat "$project"
-      fi
-    done
+  echo "Updating gradle"
+  for subdir in */; do
+    if [ "$subdir" != "gradle/" ]; then
+      project=$subdir
+      cp ./gradle "$project" -r
+      cp ./gradle.properties "$project"
+      cp ./local.properties "$project"
+      cp ./build.gradle.kts "$project"
+      cp ./gradlew "$project"
+      cp ./gradlew.bat "$project"
+      cp ./LICENSE "$project"
+    fi
+  done
 }
 
 main() {

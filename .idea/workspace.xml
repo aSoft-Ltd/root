@@ -5,7 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/formatter" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.main.kts" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.main.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache" beforeDir="false" afterPath="$PROJECT_DIR$/cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatch-updates" beforeDir="false" afterPath="$PROJECT_DIR$/dispatch-updates" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect" beforeDir="false" afterPath="$PROJECT_DIR$/expect" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions" beforeDir="false" afterPath="$PROJECT_DIR$/functions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live" beforeDir="false" afterPath="$PROJECT_DIR$/live" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/live/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math" beforeDir="false" afterPath="$PROJECT_DIR$/math" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/math/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/LICENSE" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,23 +45,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root/gradle/versions&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/gradle/versions" />
-      <recent name="$PROJECT_DIR$/cache" />
-      <recent name="$PROJECT_DIR$/expect" />
-      <recent name="$PROJECT_DIR$/koncurrent" />
-      <recent name="$PROJECT_DIR$/functions" />
+      <recent name="$PROJECT_DIR$/kash/buildSrc/src/main/kotlin" />
+      <recent name="$PROJECT_DIR$/kash" />
+      <recent name="$PROJECT_DIR$/kash/core" />
+      <recent name="$PROJECT_DIR$/formatter" />
+      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/functions/core" />

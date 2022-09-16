@@ -321,10 +321,10 @@ jobs:
           arguments: :identifier-core:build
           build-root-directory: ./identifier
       - id: step-4
-        name: ./gradlew :identifier-genertators:build
+        name: ./gradlew :identifier-generators:build
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :identifier-genertators:build
+          arguments: :identifier-generators:build
           build-root-directory: ./identifier
   "math-builder":
     runs-on: "ubuntu-latest"
@@ -800,10 +800,10 @@ jobs:
           arguments: :identifier-core:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./identifier
       - id: step-4
-        name: publishing identifier-genertators
+        name: publishing identifier-generators
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :identifier-genertators:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :identifier-generators:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./identifier
   "math-publisher":
     runs-on: "ubuntu-latest"

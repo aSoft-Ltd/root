@@ -5,11 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/identifier" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.main.kts" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.main.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formatter/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/formatter/core/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kash/currency/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/kash/currency/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kash/money/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/kash/money/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache" beforeDir="false" afterPath="$PROJECT_DIR$/cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dispatch-updates" beforeDir="false" afterPath="$PROJECT_DIR$/dispatch-updates" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect" beforeDir="false" afterPath="$PROJECT_DIR$/expect" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatter" beforeDir="false" afterPath="$PROJECT_DIR$/formatter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions" beforeDir="false" afterPath="$PROJECT_DIR$/functions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kash" beforeDir="false" afterPath="$PROJECT_DIR$/kash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kida" beforeDir="false" afterPath="$PROJECT_DIR$/kida" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live" beforeDir="false" afterPath="$PROJECT_DIR$/live" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math" beforeDir="false" afterPath="$PROJECT_DIR$/math" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdc/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/sdc/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +36,7 @@
     </projectState>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/kash" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -37,7 +51,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root",
+    "last_opened_file_path": "/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root/viewmodel",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -45,11 +59,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/identifier" />
       <recent name="$PROJECT_DIR$/kash/buildSrc/src/main/kotlin" />
       <recent name="$PROJECT_DIR$/kash" />
       <recent name="$PROJECT_DIR$/kash/core" />
-      <recent name="$PROJECT_DIR$/formatter" />
-      <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/functions/core" />

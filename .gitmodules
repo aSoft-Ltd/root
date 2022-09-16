@@ -35,3 +35,6 @@
 [submodule "formatter"]
 	path = formatter
 	url = https://github.com/aSoft-Ltd/formatter.git
+[submodule "identifier"]
+	path = identifier
+	url = https://github.com/aSoft-Ltd/identifier.git

@@ -31,7 +31,8 @@ val projects = listOf(
 
     RootProject("formatter", "formatter", listOf("core")),
     RootProject("kash", "kash", listOf("currency", "money")),
-    
+    RootProject("identifier", "identifier", listOf("core", "genertators")),
+
     // math libs
     RootProject("math", "math", listOf("core")),
     RootProject("math-spatial", "math", listOf("core")),

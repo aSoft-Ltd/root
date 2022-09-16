@@ -16,6 +16,7 @@ gradleUpdates() {
       cp ./local.properties "$project"
       cp ./build.gradle.kts "$project"
       cp ./gradlew "$project"
+      cp ./.gitignore "$project"
       cp ./gradlew.bat "$project"
       cp ./LICENSE "$project"
     fi

@@ -95,14 +95,16 @@ class SDC {
     }
 
     val g get() = canvas.graphics
+
     val g2d = g.create() as Graphics2D
+    val roadGraphics = g2d.create() as Graphics2D
+    val carGraphics = g2d.create() as Graphics2D
 
     fun run() {
         car.update()
-
         g2d.clearRect(0, 0, canvas.width, canvas.height)
-        road.draw(g2d)
-        car.draw(g2d)
+        road.draw(roadGraphics)
+        car.draw(carGraphics)
     }
 
     fun stop() {

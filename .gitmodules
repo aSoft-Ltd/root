@@ -38,3 +38,6 @@
 [submodule "identifier"]
 	path = identifier
 	url = https://github.com/aSoft-Ltd/identifier.git
+[submodule "kollections"]
+	path = kollections
+	url = https://github.com/aSoft-Ltd/kollections

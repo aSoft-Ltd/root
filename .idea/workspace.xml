@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/kollections" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/red-pages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
@@ -20,7 +20,7 @@
     </projectState>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/koncurrent" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -35,7 +35,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root/kollections/build.gradle.kts",
+    "last_opened_file_path": "/media/andylamax/Auxilliary/Workspace/aSoft/OSS/root/red-pages",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -43,11 +43,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/red-pages" />
       <recent name="$PROJECT_DIR$/kollections" />
       <recent name="$PROJECT_DIR$/kollections/api" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/identifier" />
-      <recent name="$PROJECT_DIR$/kash/buildSrc/src/main/kotlin" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/functions/core" />

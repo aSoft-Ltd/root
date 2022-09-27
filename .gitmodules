@@ -41,3 +41,9 @@
 [submodule "kollections"]
 	path = kollections
 	url = https://github.com/aSoft-Ltd/kollections
+[submodule "red-pages"]
+	path = red-pages
+	url = https://github.com/aSoft-Ltd/red-pages.git
+[submodule "bitframe"]
+	path = bitframe
+	url = https://github.com/picortex/bitframe.git

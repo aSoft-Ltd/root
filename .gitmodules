@@ -47,3 +47,6 @@
 [submodule "bitframe"]
 	path = bitframe
 	url = https://github.com/picortex/bitframe.git
+[submodule "krono"]
+	path = krono
+	url = https://github.com/picortex/home

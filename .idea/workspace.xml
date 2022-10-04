@@ -8,6 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.github/workflows/publish.main.kts" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.main.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/krono" beforeDir="false" afterPath="$PROJECT_DIR$/krono" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

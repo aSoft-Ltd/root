@@ -326,6 +326,40 @@ jobs:
         with:
           arguments: :identifier-generators:build
           build-root-directory: ./identifier
+  "geo-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: geo
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :geo-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :geo-core:build
+          build-root-directory: ./geo
+      - id: step-4
+        name: ./gradlew :geo-languages:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :geo-languages:build
+          build-root-directory: ./geo
+      - id: step-5
+        name: ./gradlew :geo-countries:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :geo-countries:build
+          build-root-directory: ./geo
   "krono-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -348,6 +382,52 @@ jobs:
         with:
           arguments: :krono-api:build
           build-root-directory: ./krono
+  "presenters-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: presenters
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :presenters-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :presenters-core:build
+          build-root-directory: ./presenters
+      - id: step-4
+        name: ./gradlew :presenters-actions:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :presenters-actions:build
+          build-root-directory: ./presenters
+      - id: step-5
+        name: ./gradlew :presenters-mock:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :presenters-mock:build
+          build-root-directory: ./presenters
+      - id: step-6
+        name: ./gradlew :presenters-krono:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :presenters-krono:build
+          build-root-directory: ./presenters
+      - id: step-7
+        name: ./gradlew :presenters-geo:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :presenters-geo:build
+          build-root-directory: ./presenters
   "math-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -489,7 +569,9 @@ jobs:
       - "formatter-builder"
       - "kash-builder"
       - "identifier-builder"
+      - "geo-builder"
       - "krono-builder"
+      - "presenters-builder"
       - "math-builder"
       - "math-spatial-builder"
       - "math-vector-builder"
@@ -828,6 +910,42 @@ jobs:
         with:
           arguments: :identifier-generators:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./identifier
+  "geo-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: geo
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing geo-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :geo-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./geo
+      - id: step-4
+        name: publishing geo-languages
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :geo-languages:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./geo
+      - id: step-5
+        name: publishing geo-countries
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :geo-countries:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./geo
   "krono-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -852,6 +970,54 @@ jobs:
         with:
           arguments: :krono-api:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./krono
+  "presenters-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: presenters
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing presenters-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :presenters-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./presenters
+      - id: step-4
+        name: publishing presenters-actions
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :presenters-actions:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./presenters
+      - id: step-5
+        name: publishing presenters-mock
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :presenters-mock:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./presenters
+      - id: step-6
+        name: publishing presenters-krono
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :presenters-krono:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./presenters
+      - id: step-7
+        name: publishing presenters-geo
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :presenters-geo:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./presenters
   "math-publisher":
     runs-on: "ubuntu-latest"
     needs:

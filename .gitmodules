@@ -50,3 +50,9 @@
 [submodule "krono"]
 	path = krono
 	url = https://github.com/picortex/krono.git
+[submodule "geo"]
+	path = geo
+	url = https://github.com/picortex/geo.git
+[submodule "presenters"]
+	path = presenters
+	url = https://github.com/picortex/presenters.git

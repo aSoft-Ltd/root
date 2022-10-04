@@ -5,11 +5,101 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/geo" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/presenters" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.github/workflows/publish.main.kts" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.main.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gitmodules" beforeDir="false" afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache" beforeDir="false" afterPath="$PROJECT_DIR$/cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/cache/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/cache/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/cache/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/cache/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cache/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/cache/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect" beforeDir="false" afterPath="$PROJECT_DIR$/expect" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/expect/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/expect/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/expect/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/expect/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/expect/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/expect/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatter" beforeDir="false" afterPath="$PROJECT_DIR$/formatter" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatter/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/formatter/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatter/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/formatter/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatter/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/formatter/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatter/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/formatter/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/formatter/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/formatter/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions" beforeDir="false" afterPath="$PROJECT_DIR$/functions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/functions/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/functions/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/functions/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/functions/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/functions/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/functions/gradle/versions/ktor.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier" beforeDir="false" afterPath="$PROJECT_DIR$/identifier" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/identifier/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/identifier/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/identifier/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/identifier/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/identifier/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kash" beforeDir="false" afterPath="$PROJECT_DIR$/kash" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kash/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/kash/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kash/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kash/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kash/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kash/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kash/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kash/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kash/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kash/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kida" beforeDir="false" afterPath="$PROJECT_DIR$/kida" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kida/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/kida/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kida/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kida/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kida/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kida/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kida/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kida/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kida/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kida/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kollections" beforeDir="false" afterPath="$PROJECT_DIR$/kollections" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kollections/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/kollections/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kollections/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kollections/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kollections/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kollections/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kollections/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kollections/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kollections/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/kollections/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/koncurrent/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent/gradle/versions/ktor.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/krono" beforeDir="false" afterPath="$PROJECT_DIR$/krono" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live" beforeDir="false" afterPath="$PROJECT_DIR$/live" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/live/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/live/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/live/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/live/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/live/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/live/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math" beforeDir="false" afterPath="$PROJECT_DIR$/math" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/math/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/math/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/math/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/math/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/math/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/math/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/red-pages" beforeDir="false" afterPath="$PROJECT_DIR$/red-pages" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/red-pages/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/red-pages/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/red-pages/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/red-pages/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/red-pages/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/red-pages/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/red-pages/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/red-pages/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/red-pages/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/red-pages/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdc/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/sdc/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdc/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/sdc/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdc/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/sdc/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdc/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/sdc/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdc/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/sdc/gradle/versions/ktor.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/gradle/versions/kotlinx.toml" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/gradle/versions/kotlinx.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/gradle/versions/kotlinz.toml" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/gradle/versions/kotlinz.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/viewmodel/gradle/versions/ktor.toml" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/gradle/versions/ktor.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

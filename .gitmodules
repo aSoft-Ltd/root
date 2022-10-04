@@ -49,4 +49,4 @@
 	url = https://github.com/picortex/bitframe.git
 [submodule "krono"]
 	path = krono
-	url = https://github.com/picortex/home
+	url = https://github.com/picortex/krono.git

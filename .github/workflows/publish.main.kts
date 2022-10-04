@@ -33,6 +33,8 @@ val projects = listOf(
     RootProject("kash", "kash", listOf("currency", "money")),
     RootProject("identifier", "identifier", listOf("core", "generators")),
 
+    RootProject("krono", "krono", listOf("api")),
+
     // math libs
     RootProject("math", "math", listOf("core")),
     RootProject("math-spatial", "math", listOf("core")),

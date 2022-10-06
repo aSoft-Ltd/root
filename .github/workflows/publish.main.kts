@@ -87,12 +87,16 @@ fun WorkflowBuilder.publishProject(rp: RootProject, after: Job) = job(
     id = "${rp.name}-publisher", runsOn = UbuntuLatest, needs = listOf(after)
 ) {
     setupAndCheckout(rp)
-    rp.subs.forEachIndexed { index, it ->
-        val argument = ":${rp.name}-$it:publishToSonatype closeAndReleaseStagingRepository"
-        uses(
-            name = "publishing ${rp.name}-$it", action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
-        )
-    }
+    val argument = rp.subs.joinToString(separator = " ") { ":${rp.name}-$it:publishToSonatype" } + " closeAndReleaseStagingRepository"
+    uses(
+        name = "publishing " + rp.subs.joinToString(", ") { "${rp.name}-$it" },
+        action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
+    )
+//    rp.subs.forEachIndexed { index, it ->
+//        uses(
+//            name = "publishing ${rp.name}-$it", action = GradleBuildActionV2(arguments = argument, buildRootDirectory = "./${rp.path}")
+//        )
+//    }
 }
 
 val workflow = workflow(

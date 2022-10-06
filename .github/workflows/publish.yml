@@ -1001,16 +1001,10 @@ jobs:
         working-directory: expect
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing expect-core
+        name: publishing expect-core, expect-coroutines
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :expect-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./expect
-      - id: step-4
-        name: publishing expect-coroutines
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :expect-coroutines:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :expect-core:publishToSonatype :expect-coroutines:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./expect
   "koncurrent-primitives-publisher":
     runs-on: "ubuntu-latest"
@@ -1031,22 +1025,10 @@ jobs:
         working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing koncurrent-primitives-core
+        name: publishing koncurrent-primitives-core, koncurrent-primitives-coroutines, koncurrent-primitives-mock
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :koncurrent-primitives-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./koncurrent
-      - id: step-4
-        name: publishing koncurrent-primitives-coroutines
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :koncurrent-primitives-coroutines:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./koncurrent
-      - id: step-5
-        name: publishing koncurrent-primitives-mock
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :koncurrent-primitives-mock:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :koncurrent-primitives-core:publishToSonatype :koncurrent-primitives-coroutines:publishToSonatype :koncurrent-primitives-mock:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./koncurrent
   "koncurrent-later-publisher":
     runs-on: "ubuntu-latest"
@@ -1067,22 +1049,10 @@ jobs:
         working-directory: koncurrent
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing koncurrent-later-core
+        name: publishing koncurrent-later-core, koncurrent-later-coroutines, koncurrent-later-test
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :koncurrent-later-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./koncurrent
-      - id: step-4
-        name: publishing koncurrent-later-coroutines
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :koncurrent-later-coroutines:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./koncurrent
-      - id: step-5
-        name: publishing koncurrent-later-test
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :koncurrent-later-test:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :koncurrent-later-core:publishToSonatype :koncurrent-later-coroutines:publishToSonatype :koncurrent-later-test:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./koncurrent
   "live-publisher":
     runs-on: "ubuntu-latest"
@@ -1103,34 +1073,10 @@ jobs:
         working-directory: live
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing live-core
+        name: publishing live-core, live-compose, live-coroutines, live-react, live-test
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :live-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./live
-      - id: step-4
-        name: publishing live-compose
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-compose:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./live
-      - id: step-5
-        name: publishing live-coroutines
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-coroutines:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./live
-      - id: step-6
-        name: publishing live-react
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-react:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./live
-      - id: step-7
-        name: publishing live-test
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :live-test:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :live-core:publishToSonatype :live-compose:publishToSonatype :live-coroutines:publishToSonatype :live-react:publishToSonatype :live-test:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./live
   "viewmodel-publisher":
     runs-on: "ubuntu-latest"
@@ -1175,34 +1121,10 @@ jobs:
         working-directory: cache
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing cache-api
+        name: publishing cache-api, cache-browser, cache-file, cache-mock, cache-react-native
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :cache-api:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./cache
-      - id: step-4
-        name: publishing cache-browser
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :cache-browser:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./cache
-      - id: step-5
-        name: publishing cache-file
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :cache-file:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./cache
-      - id: step-6
-        name: publishing cache-mock
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :cache-mock:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./cache
-      - id: step-7
-        name: publishing cache-react-native
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :cache-react-native:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :cache-api:publishToSonatype :cache-browser:publishToSonatype :cache-file:publishToSonatype :cache-mock:publishToSonatype :cache-react-native:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./cache
   "formatter-publisher":
     runs-on: "ubuntu-latest"
@@ -1247,16 +1169,10 @@ jobs:
         working-directory: kash
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing kash-currency
+        name: publishing kash-currency, kash-money
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :kash-currency:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./kash
-      - id: step-4
-        name: publishing kash-money
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :kash-money:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :kash-currency:publishToSonatype :kash-money:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./kash
   "identifier-publisher":
     runs-on: "ubuntu-latest"
@@ -1277,16 +1193,10 @@ jobs:
         working-directory: identifier
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing identifier-core
+        name: publishing identifier-core, identifier-generators
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :identifier-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./identifier
-      - id: step-4
-        name: publishing identifier-generators
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :identifier-generators:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :identifier-core:publishToSonatype :identifier-generators:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./identifier
   "events-publisher":
     runs-on: "ubuntu-latest"
@@ -1307,22 +1217,10 @@ jobs:
         working-directory: events
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing events-core
+        name: publishing events-core, events-inmemory, events-react
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :events-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./events
-      - id: step-4
-        name: publishing events-inmemory
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :events-inmemory:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./events
-      - id: step-5
-        name: publishing events-react
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :events-react:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :events-core:publishToSonatype :events-inmemory:publishToSonatype :events-react:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./events
   "response-publisher":
     runs-on: "ubuntu-latest"
@@ -1367,22 +1265,10 @@ jobs:
         working-directory: geo
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing geo-core
+        name: publishing geo-core, geo-languages, geo-countries
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :geo-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./geo
-      - id: step-4
-        name: publishing geo-languages
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :geo-languages:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./geo
-      - id: step-5
-        name: publishing geo-countries
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :geo-countries:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :geo-core:publishToSonatype :geo-languages:publishToSonatype :geo-countries:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./geo
   "krono-publisher":
     runs-on: "ubuntu-latest"
@@ -1427,34 +1313,10 @@ jobs:
         working-directory: presenters
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing presenters-core
+        name: publishing presenters-core, presenters-actions, presenters-mock, presenters-krono, presenters-geo
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :presenters-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./presenters
-      - id: step-4
-        name: publishing presenters-actions
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :presenters-actions:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./presenters
-      - id: step-5
-        name: publishing presenters-mock
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :presenters-mock:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./presenters
-      - id: step-6
-        name: publishing presenters-krono
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :presenters-krono:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./presenters
-      - id: step-7
-        name: publishing presenters-geo
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :presenters-geo:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :presenters-core:publishToSonatype :presenters-actions:publishToSonatype :presenters-mock:publishToSonatype :presenters-krono:publishToSonatype :presenters-geo:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./presenters
   "mailer-publisher":
     runs-on: "ubuntu-latest"
@@ -1475,22 +1337,10 @@ jobs:
         working-directory: mailer
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing mailer-api
+        name: publishing mailer-api, mailer-mock, mailer-smtp
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :mailer-api:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./mailer
-      - id: step-4
-        name: publishing mailer-mock
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :mailer-mock:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./mailer
-      - id: step-5
-        name: publishing mailer-smtp
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :mailer-smtp:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :mailer-api:publishToSonatype :mailer-mock:publishToSonatype :mailer-smtp:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./mailer
   "bitframe-actor-publisher":
     runs-on: "ubuntu-latest"
@@ -1511,28 +1361,10 @@ jobs:
         working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing bitframe-actor-core
+        name: publishing bitframe-actor-core, bitframe-actor-app, bitframe-actor-user, bitframe-actor-space
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :bitframe-actor-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-4
-        name: publishing bitframe-actor-app
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-actor-app:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-5
-        name: publishing bitframe-actor-user
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-actor-user:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-6
-        name: publishing bitframe-actor-space
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-actor-space:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :bitframe-actor-core:publishToSonatype :bitframe-actor-app:publishToSonatype :bitframe-actor-user:publishToSonatype :bitframe-actor-space:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./bitframe
   "bitframe-dao-publisher":
     runs-on: "ubuntu-latest"
@@ -1553,28 +1385,10 @@ jobs:
         working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing bitframe-dao-core
+        name: publishing bitframe-dao-core, bitframe-dao-mock, bitframe-dao-mongo, bitframe-dao-file
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :bitframe-dao-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-4
-        name: publishing bitframe-dao-mock
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-dao-mock:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-5
-        name: publishing bitframe-dao-mongo
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-dao-mongo:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-6
-        name: publishing bitframe-dao-file
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-dao-file:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :bitframe-dao-core:publishToSonatype :bitframe-dao-mock:publishToSonatype :bitframe-dao-mongo:publishToSonatype :bitframe-dao-file:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./bitframe
   "bitframe-publisher":
     runs-on: "ubuntu-latest"
@@ -1619,22 +1433,10 @@ jobs:
         working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing bitframe-service-builder-core
+        name: publishing bitframe-service-builder-core, bitframe-service-builder-daod, bitframe-service-builder-rest
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :bitframe-service-builder-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-4
-        name: publishing bitframe-service-builder-daod
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-service-builder-daod:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-5
-        name: publishing bitframe-service-builder-rest
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-service-builder-rest:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :bitframe-service-builder-core:publishToSonatype :bitframe-service-builder-daod:publishToSonatype :bitframe-service-builder-rest:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./bitframe
   "bitframe-service-builder-api-publisher":
     runs-on: "ubuntu-latest"
@@ -1655,22 +1457,10 @@ jobs:
         working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing bitframe-service-builder-api-core
+        name: publishing bitframe-service-builder-api-core, bitframe-service-builder-api-ktor, bitframe-service-builder-api-mock
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :bitframe-service-builder-api-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-4
-        name: publishing bitframe-service-builder-api-ktor
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-service-builder-api-ktor:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-5
-        name: publishing bitframe-service-builder-api-mock
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-service-builder-api-mock:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :bitframe-service-builder-api-core:publishToSonatype :bitframe-service-builder-api-ktor:publishToSonatype :bitframe-service-builder-api-mock:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./bitframe
   "bitframe-service-builder-sdk-client-publisher":
     runs-on: "ubuntu-latest"
@@ -1691,16 +1481,10 @@ jobs:
         working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing bitframe-service-builder-sdk-client-core
+        name: publishing bitframe-service-builder-sdk-client-core, bitframe-service-builder-sdk-client-react
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :bitframe-service-builder-sdk-client-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-4
-        name: publishing bitframe-service-builder-sdk-client-react
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-service-builder-sdk-client-react:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :bitframe-service-builder-sdk-client-core:publishToSonatype :bitframe-service-builder-sdk-client-react:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./bitframe
   "bitframe-service-builder-sdk-server-publisher":
     runs-on: "ubuntu-latest"
@@ -1769,22 +1553,10 @@ jobs:
         working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing bitframe-sdk-server-core
+        name: publishing bitframe-sdk-server-core, bitframe-sdk-server-ktor, bitframe-sdk-server-test
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :bitframe-sdk-server-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-4
-        name: publishing bitframe-sdk-server-ktor
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-sdk-server-ktor:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframe
-      - id: step-5
-        name: publishing bitframe-sdk-server-test
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :bitframe-sdk-server-test:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :bitframe-sdk-server-core:publishToSonatype :bitframe-sdk-server-ktor:publishToSonatype :bitframe-sdk-server-test:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./bitframe
   "math-publisher":
     runs-on: "ubuntu-latest"
@@ -1901,27 +1673,9 @@ jobs:
         working-directory: kida
         run: chmod +x ./gradlew
       - id: step-3
-        name: publishing kida-api
+        name: publishing kida-api, kida-ktor, kida-core, kida-fake
         uses: gradle/gradle-build-action@v2
         with:
-          arguments: :kida-api:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./kida
-      - id: step-4
-        name: publishing kida-ktor
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :kida-ktor:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./kida
-      - id: step-5
-        name: publishing kida-core
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :kida-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./kida
-      - id: step-6
-        name: publishing kida-fake
-        uses: gradle/gradle-build-action@v2
-        with:
-          arguments: :kida-fake:publishToSonatype closeAndReleaseStagingRepository
+          arguments: :kida-api:publishToSonatype :kida-ktor:publishToSonatype :kida-core:publishToSonatype :kida-fake:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./kida
 

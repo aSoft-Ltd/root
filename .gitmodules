@@ -56,3 +56,12 @@
 [submodule "presenters"]
 	path = presenters
 	url = https://github.com/picortex/presenters.git
+[submodule "mailer"]
+	path = mailer
+	url = https://github.com/picortex/mailer.git
+[submodule "response"]
+	path = response
+	url = https://github.com/aSoft-Ltd/response.git
+[submodule "events"]
+	path = events
+	url = https://github.com/aSoft-Ltd/events.git

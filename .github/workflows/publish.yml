@@ -326,6 +326,62 @@ jobs:
         with:
           arguments: :identifier-generators:build
           build-root-directory: ./identifier
+  "events-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: events
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :events-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :events-core:build
+          build-root-directory: ./events
+      - id: step-4
+        name: ./gradlew :events-inmemory:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :events-inmemory:build
+          build-root-directory: ./events
+      - id: step-5
+        name: ./gradlew :events-react:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :events-react:build
+          build-root-directory: ./events
+  "response-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: response
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :response-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :response-core:build
+          build-root-directory: ./response
   "geo-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -428,6 +484,316 @@ jobs:
         with:
           arguments: :presenters-geo:build
           build-root-directory: ./presenters
+  "mailer-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: mailer
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :mailer-api:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :mailer-api:build
+          build-root-directory: ./mailer
+      - id: step-4
+        name: ./gradlew :mailer-mock:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :mailer-mock:build
+          build-root-directory: ./mailer
+      - id: step-5
+        name: ./gradlew :mailer-smtp:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :mailer-smtp:build
+          build-root-directory: ./mailer
+  "bitframe-actor-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :bitframe-actor-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-actor-core:build
+          build-root-directory: ./bitframe
+      - id: step-4
+        name: ./gradlew :bitframe-actor-app:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-actor-app:build
+          build-root-directory: ./bitframe
+      - id: step-5
+        name: ./gradlew :bitframe-actor-user:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-actor-user:build
+          build-root-directory: ./bitframe
+      - id: step-6
+        name: ./gradlew :bitframe-actor-space:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-actor-space:build
+          build-root-directory: ./bitframe
+  "bitframe-dao-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :bitframe-dao-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-dao-core:build
+          build-root-directory: ./bitframe
+      - id: step-4
+        name: ./gradlew :bitframe-dao-mock:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-dao-mock:build
+          build-root-directory: ./bitframe
+      - id: step-5
+        name: ./gradlew :bitframe-dao-mongo:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-dao-mongo:build
+          build-root-directory: ./bitframe
+      - id: step-6
+        name: ./gradlew :bitframe-dao-file:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-dao-file:build
+          build-root-directory: ./bitframe
+  "bitframe-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :bitframe-dao:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-dao:build
+          build-root-directory: ./bitframe
+  "bitframe-service-builder-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitfrmae
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :bitframe-service-builder-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-core:build
+          build-root-directory: ./bitfrmae
+      - id: step-4
+        name: ./gradlew :bitframe-service-builder-daod:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-daod:build
+          build-root-directory: ./bitfrmae
+      - id: step-5
+        name: ./gradlew :bitframe-service-builder-rest:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-rest:build
+          build-root-directory: ./bitfrmae
+  "bitframe-service-builder-api-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :bitframe-service-builder-api-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-api-core:build
+          build-root-directory: ./bitframe
+      - id: step-4
+        name: ./gradlew :bitframe-service-builder-api-ktor:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-api-ktor:build
+          build-root-directory: ./bitframe
+      - id: step-5
+        name: ./gradlew :bitframe-service-builder-api-mock:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-api-mock:build
+          build-root-directory: ./bitframe
+  "bitframe-service-builder-sdk-client-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :bitframe-service-builder-sdk-client-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-sdk-client-core:build
+          build-root-directory: ./bitframe
+      - id: step-4
+        name: ./gradlew :bitframe-service-builder-sdk-client-react:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-sdk-client-react:build
+          build-root-directory: ./bitframe
+  "bitframe-service-builder-sdk-server-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :bitframe-service-builder-sdk-server-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-sdk-server-core:build
+          build-root-directory: ./bitframe
+  "bitframe-api-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: api
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :bitframe-api-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-api-core:build
+          build-root-directory: ./api
+  "bitframe-sdk-server-builder":
+    runs-on: "ubuntu-latest"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframer
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: ./gradlew :bitframe-sdk-server-core:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-sdk-server-core:build
+          build-root-directory: ./bitframer
+      - id: step-4
+        name: ./gradlew :bitframe-sdk-server-ktor:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-sdk-server-ktor:build
+          build-root-directory: ./bitframer
+      - id: step-5
+        name: ./gradlew :bitframe-sdk-server-test:build
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-sdk-server-test:build
+          build-root-directory: ./bitframer
   "math-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -569,9 +935,21 @@ jobs:
       - "formatter-builder"
       - "kash-builder"
       - "identifier-builder"
+      - "events-builder"
+      - "response-builder"
       - "geo-builder"
       - "krono-builder"
       - "presenters-builder"
+      - "mailer-builder"
+      - "bitframe-actor-builder"
+      - "bitframe-dao-builder"
+      - "bitframe-builder"
+      - "bitframe-service-builder-builder"
+      - "bitframe-service-builder-api-builder"
+      - "bitframe-service-builder-sdk-client-builder"
+      - "bitframe-service-builder-sdk-server-builder"
+      - "bitframe-api-builder"
+      - "bitframe-sdk-server-builder"
       - "math-builder"
       - "math-spatial-builder"
       - "math-vector-builder"
@@ -910,6 +1288,66 @@ jobs:
         with:
           arguments: :identifier-generators:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./identifier
+  "events-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: events
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing events-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :events-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./events
+      - id: step-4
+        name: publishing events-inmemory
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :events-inmemory:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./events
+      - id: step-5
+        name: publishing events-react
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :events-react:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./events
+  "response-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: response
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing response-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :response-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./response
   "geo-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -1018,6 +1456,336 @@ jobs:
         with:
           arguments: :presenters-geo:publishToSonatype closeAndReleaseStagingRepository
           build-root-directory: ./presenters
+  "mailer-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: mailer
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing mailer-api
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :mailer-api:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./mailer
+      - id: step-4
+        name: publishing mailer-mock
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :mailer-mock:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./mailer
+      - id: step-5
+        name: publishing mailer-smtp
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :mailer-smtp:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./mailer
+  "bitframe-actor-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing bitframe-actor-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-actor-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+      - id: step-4
+        name: publishing bitframe-actor-app
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-actor-app:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+      - id: step-5
+        name: publishing bitframe-actor-user
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-actor-user:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+      - id: step-6
+        name: publishing bitframe-actor-space
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-actor-space:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+  "bitframe-dao-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing bitframe-dao-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-dao-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+      - id: step-4
+        name: publishing bitframe-dao-mock
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-dao-mock:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+      - id: step-5
+        name: publishing bitframe-dao-mongo
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-dao-mongo:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+      - id: step-6
+        name: publishing bitframe-dao-file
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-dao-file:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+  "bitframe-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing bitframe-dao
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-dao:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+  "bitframe-service-builder-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitfrmae
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing bitframe-service-builder-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitfrmae
+      - id: step-4
+        name: publishing bitframe-service-builder-daod
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-daod:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitfrmae
+      - id: step-5
+        name: publishing bitframe-service-builder-rest
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-rest:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitfrmae
+  "bitframe-service-builder-api-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing bitframe-service-builder-api-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-api-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+      - id: step-4
+        name: publishing bitframe-service-builder-api-ktor
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-api-ktor:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+      - id: step-5
+        name: publishing bitframe-service-builder-api-mock
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-api-mock:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+  "bitframe-service-builder-sdk-client-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing bitframe-service-builder-sdk-client-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-sdk-client-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+      - id: step-4
+        name: publishing bitframe-service-builder-sdk-client-react
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-sdk-client-react:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+  "bitframe-service-builder-sdk-server-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframe
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing bitframe-service-builder-sdk-server-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-service-builder-sdk-server-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframe
+  "bitframe-api-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: api
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing bitframe-api-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-api-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./api
+  "bitframe-sdk-server-publisher":
+    runs-on: "ubuntu-latest"
+    needs:
+      - "rendezvous"
+    steps:
+      - id: step-0
+        uses: actions/checkout@v3
+        with:
+          submodules: true
+      - id: step-1
+        uses: actions/setup-java@v3
+        with:
+          java-version: 18
+          distribution: corretto
+      - id: step-2
+        name: Make ./gradlew executable
+        working-directory: bitframer
+        run: chmod +x ./gradlew
+      - id: step-3
+        name: publishing bitframe-sdk-server-core
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-sdk-server-core:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframer
+      - id: step-4
+        name: publishing bitframe-sdk-server-ktor
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-sdk-server-ktor:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframer
+      - id: step-5
+        name: publishing bitframe-sdk-server-test
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: :bitframe-sdk-server-test:publishToSonatype closeAndReleaseStagingRepository
+          build-root-directory: ./bitframer
   "math-publisher":
     runs-on: "ubuntu-latest"
     needs:

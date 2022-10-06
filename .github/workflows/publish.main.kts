@@ -33,9 +33,24 @@ val projects = listOf(
     RootProject("kash", "kash", listOf("currency", "money")),
     RootProject("identifier", "identifier", listOf("core", "generators")),
 
+    RootProject("events", "events", listOf("core", "inmemory", "react")),
+    RootProject("response", "response", listOf("core")),
+
     RootProject("geo", "geo", listOf("core", "languages", "countries")),
     RootProject("krono", "krono", listOf("api")),
     RootProject("presenters", "presenters", listOf("core", "actions", "mock", "krono", "geo")),
+
+    RootProject("mailer", "mailer", listOf("api", "mock", "smtp")),
+
+    RootProject("bitframe-actor", "bitframe", listOf("core", "app", "user", "space")),
+    RootProject("bitframe-dao", "bitframe", listOf("core", "mock", "mongo", "file")),
+    RootProject("bitframe", "bitframe", listOf("dao")),
+    RootProject("bitframe-service-builder", "bitfrmae", listOf("core", "daod", "rest")),
+    RootProject("bitframe-service-builder-api", "bitframe", listOf("core", "ktor", "mock")),
+    RootProject("bitframe-service-builder-sdk-client", "bitframe", listOf("core", "react" /* "mock",*/)),
+    RootProject("bitframe-service-builder-sdk-server", "bitframe", listOf("core")),
+    RootProject("bitframe-api", "api", listOf("core" /* "ktor", "mock" */)),
+    RootProject("bitframe-sdk-server", "bitframer", listOf("core", "ktor", "test")),
 
     // math libs
     RootProject("math", "math", listOf("core")),

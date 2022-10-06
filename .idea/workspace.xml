@@ -5,24 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.main.kts" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.main.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitframe" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cache" beforeDir="false" afterPath="$PROJECT_DIR$/cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/events" beforeDir="false" afterPath="$PROJECT_DIR$/events" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/expect" beforeDir="false" afterPath="$PROJECT_DIR$/expect" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/formatter" beforeDir="false" afterPath="$PROJECT_DIR$/formatter" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/functions" beforeDir="false" afterPath="$PROJECT_DIR$/functions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/geo" beforeDir="false" afterPath="$PROJECT_DIR$/geo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identifier" beforeDir="false" afterPath="$PROJECT_DIR$/identifier" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kash" beforeDir="false" afterPath="$PROJECT_DIR$/kash" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kida" beforeDir="false" afterPath="$PROJECT_DIR$/kida" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kollections" beforeDir="false" afterPath="$PROJECT_DIR$/kollections" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/koncurrent" beforeDir="false" afterPath="$PROJECT_DIR$/koncurrent" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/response" beforeDir="false" afterPath="$PROJECT_DIR$/response" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdc/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/sdc/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailer/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/mailer/settings.gradle.kts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

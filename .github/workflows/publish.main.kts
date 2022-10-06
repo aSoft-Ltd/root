@@ -45,12 +45,12 @@ val projects = listOf(
     RootProject("bitframe-actor", "bitframe", listOf("core", "app", "user", "space")),
     RootProject("bitframe-dao", "bitframe", listOf("core", "mock", "mongo", "file")),
     RootProject("bitframe", "bitframe", listOf("dao")),
-    RootProject("bitframe-service-builder", "bitfrmae", listOf("core", "daod", "rest")),
+    RootProject("bitframe-service-builder", "bitframe", listOf("core", "daod", "rest")),
     RootProject("bitframe-service-builder-api", "bitframe", listOf("core", "ktor", "mock")),
     RootProject("bitframe-service-builder-sdk-client", "bitframe", listOf("core", "react" /* "mock",*/)),
     RootProject("bitframe-service-builder-sdk-server", "bitframe", listOf("core")),
-    RootProject("bitframe-api", "api", listOf("core" /* "ktor", "mock" */)),
-    RootProject("bitframe-sdk-server", "bitframer", listOf("core", "ktor", "test")),
+    RootProject("bitframe-api", "bitframe", listOf("core" /* "ktor", "mock" */)),
+    RootProject("bitframe-sdk-server", "bitframe", listOf("core", "ktor", "test")),
 
     // math libs
     RootProject("math", "math", listOf("core")),

@@ -634,26 +634,26 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: bitfrmae
+        working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
         name: ./gradlew :bitframe-service-builder-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-service-builder-core:build
-          build-root-directory: ./bitfrmae
+          build-root-directory: ./bitframe
       - id: step-4
         name: ./gradlew :bitframe-service-builder-daod:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-service-builder-daod:build
-          build-root-directory: ./bitfrmae
+          build-root-directory: ./bitframe
       - id: step-5
         name: ./gradlew :bitframe-service-builder-rest:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-service-builder-rest:build
-          build-root-directory: ./bitfrmae
+          build-root-directory: ./bitframe
   "bitframe-service-builder-api-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -752,14 +752,14 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: api
+        working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
         name: ./gradlew :bitframe-api-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-api-core:build
-          build-root-directory: ./api
+          build-root-directory: ./bitframe
   "bitframe-sdk-server-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -774,26 +774,26 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: bitframer
+        working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
         name: ./gradlew :bitframe-sdk-server-core:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-sdk-server-core:build
-          build-root-directory: ./bitframer
+          build-root-directory: ./bitframe
       - id: step-4
         name: ./gradlew :bitframe-sdk-server-ktor:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-sdk-server-ktor:build
-          build-root-directory: ./bitframer
+          build-root-directory: ./bitframe
       - id: step-5
         name: ./gradlew :bitframe-sdk-server-test:build
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-sdk-server-test:build
-          build-root-directory: ./bitframer
+          build-root-directory: ./bitframe
   "math-builder":
     runs-on: "ubuntu-latest"
     steps:
@@ -1616,26 +1616,26 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: bitfrmae
+        working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
         name: publishing bitframe-service-builder-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-service-builder-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitfrmae
+          build-root-directory: ./bitframe
       - id: step-4
         name: publishing bitframe-service-builder-daod
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-service-builder-daod:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitfrmae
+          build-root-directory: ./bitframe
       - id: step-5
         name: publishing bitframe-service-builder-rest
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-service-builder-rest:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitfrmae
+          build-root-directory: ./bitframe
   "bitframe-service-builder-api-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -1742,14 +1742,14 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: api
+        working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
         name: publishing bitframe-api-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-api-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./api
+          build-root-directory: ./bitframe
   "bitframe-sdk-server-publisher":
     runs-on: "ubuntu-latest"
     needs:
@@ -1766,26 +1766,26 @@ jobs:
           distribution: corretto
       - id: step-2
         name: Make ./gradlew executable
-        working-directory: bitframer
+        working-directory: bitframe
         run: chmod +x ./gradlew
       - id: step-3
         name: publishing bitframe-sdk-server-core
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-sdk-server-core:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframer
+          build-root-directory: ./bitframe
       - id: step-4
         name: publishing bitframe-sdk-server-ktor
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-sdk-server-ktor:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframer
+          build-root-directory: ./bitframe
       - id: step-5
         name: publishing bitframe-sdk-server-test
         uses: gradle/gradle-build-action@v2
         with:
           arguments: :bitframe-sdk-server-test:publishToSonatype closeAndReleaseStagingRepository
-          build-root-directory: ./bitframer
+          build-root-directory: ./bitframe
   "math-publisher":
     runs-on: "ubuntu-latest"
     needs:

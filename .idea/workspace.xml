@@ -5,11 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a21fc0ce-aa24-45c4-94bf-6e7926714e30" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.main.kts" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.main.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/publish.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/publish.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bitframe" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/actors/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/actors/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/actors/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/actors/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/actors/space/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/actors/space/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/actors/user/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/actors/user/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/api/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/api/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/api/ktor/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/api/ktor/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/api/mock/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/api/mock/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/daos/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/daos/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/daos/file/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/daos/file/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/daos/mock/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/daos/mock/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/daos/mongo/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/daos/mongo/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/daos/universal/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/daos/universal/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bitframe/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/sdk/server/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/sdk/server/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/sdk/server/ktor/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/sdk/server/ktor/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/sdk/server/test/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/sdk/server/test/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/api/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/api/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/api/ktor/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/api/ktor/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/api/kuest/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/api/kuest/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/api/mock/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/api/mock/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/daod/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/daod/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/rest/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/rest/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/mock/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/mock/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/react/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/react/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/sdk/server/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/sdk/server/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/utils/properties/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/utils/properties/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/utils/templater/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/utils/templater/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/utils/validation/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/utils/validation/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cache" beforeDir="false" afterPath="$PROJECT_DIR$/cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/cache/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/cache/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/events" beforeDir="false" afterPath="$PROJECT_DIR$/events" afterDir="false" />
@@ -20,7 +47,11 @@
       <change beforePath="$PROJECT_DIR$/functions" beforeDir="false" afterPath="$PROJECT_DIR$/functions" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/functions/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/geo" beforeDir="false" afterPath="$PROJECT_DIR$/geo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/geo/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo/countries/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/geo/countries/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/geo/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/geo/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/geo/languages/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/geo/languages/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identifier" beforeDir="false" afterPath="$PROJECT_DIR$/identifier" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identifier/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/identifier/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/kash" beforeDir="false" afterPath="$PROJECT_DIR$/kash" afterDir="false" />
@@ -36,15 +67,22 @@
       <change beforePath="$PROJECT_DIR$/live" beforeDir="false" afterPath="$PROJECT_DIR$/live" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/live/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/live/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailer" beforeDir="false" afterPath="$PROJECT_DIR$/mailer" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailer/api/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/mailer/api/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mailer/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/mailer/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailer/mock/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/mailer/mock/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mailer/smtp/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/mailer/smtp/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/math" beforeDir="false" afterPath="$PROJECT_DIR$/math" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/math/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/math/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presenters" beforeDir="false" afterPath="$PROJECT_DIR$/presenters" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenters/actions/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/presenters/actions/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenters/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/presenters/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenters/geo/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/presenters/geo/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/presenters/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/presenters/gradle/versions/asoft.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenters/krono/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/presenters/krono/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/presenters/mock/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/presenters/mock/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/red-pages" beforeDir="false" afterPath="$PROJECT_DIR$/red-pages" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/red-pages/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/red-pages/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/response" beforeDir="false" afterPath="$PROJECT_DIR$/response" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdc/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/sdc/gradle/versions/asoft.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewmodel" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/viewmodel/gradle/versions/asoft.toml" beforeDir="false" afterPath="$PROJECT_DIR$/viewmodel/gradle/versions/asoft.toml" afterDir="false" />
     </list>

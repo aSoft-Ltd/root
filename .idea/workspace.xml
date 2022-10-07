@@ -30,8 +30,8 @@
       <change beforePath="$PROJECT_DIR$/bitframe/service/builder/rest/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/rest/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/core/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/mock/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/mock/build.gradle.kts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/react/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/sdk/client/react/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bitframe/service/builder/sdk/server/core/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/service/builder/sdk/server/core/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bitframe/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bitframe/utils/properties/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/utils/properties/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bitframe/utils/templater/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/utils/templater/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bitframe/utils/validation/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/bitframe/utils/validation/build.gradle.kts" afterDir="false" />
